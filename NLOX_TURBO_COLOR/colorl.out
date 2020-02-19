@@ -1,0 +1,1934 @@
+color =  + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOlj2l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOlj2l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOlj2l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli1l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli4e,cOli5l)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOlj2l)*cOlf(cOlj2l,
+      cOli5e,cOli5l)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli3l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli4l,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2e,cOli5l)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOlj2l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOlj2l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOlj2l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli2l,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3e)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli3l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4e)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli4l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5e)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli3e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli4e)*cOlf(cOli3e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5e)*cOlf(cOli3e,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOlj2l,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli4e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli6l)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5l,cOli6l)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli4l,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli3l,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli3e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5e)*cOlf(cOlj2l,cOli3e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli6l)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5l,cOli6l)*cOlf(cOli3e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli4l,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli5e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli4l,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli3e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli4e)*cOlf(cOlj2l,cOli3e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5l,cOli6l)*cOlf(cOli3e,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli2l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli3l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli3e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli3l,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli4e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5e,cOli5l)*cOlf(cOli2e,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli3e,cOli5l)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli4e,cOli5l)*cOlf(cOli3e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli1l,
+      cOli2e,cOli9e)*cOlf(cOli1l,cOli5e,cOli5l)*cOlf(cOli3e,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli3e,cOli5l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli3l,cOli5l)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli4e,cOli5l)*cOlf(cOli3e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli4l,cOli5l)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli0l,cOli1e,cOli9e)*cOlf(cOli0l,cOli5l,cOli6l)*cOlf(cOli2e,
+      cOli5e,cOli5l)*cOlf(cOli3e,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli4e,cOli5l)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli5e,cOli5l)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli3l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli4e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli4l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli5e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli4l,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli1l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3e,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli3e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli3e,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOlj2l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3e,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli3l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli4l,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,
+      cOli5l,cOli6l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli3l)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOlj2l,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4l)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOlj2l,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli3l,cOli4l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli4e,cOli5e) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli3l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli5e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli4l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli4e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2e,cOli5l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4e,
+      cOli5e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOlj2l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli3l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli4e,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli4l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli5e,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli2l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli4e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOlj2l,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3e)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOlj2l,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli3e,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli3l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli3e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4e)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli3e,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli4l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli3e,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5e)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3l)*cOlf(cOli3e,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOli3e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4l)*cOlf(cOli3e,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOli3e,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOlj2l,cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOli4e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOli3e,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOli3e,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOli3e,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOli3e,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli3l,cOli4l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOlj2l,
+      cOli4e,cOli5e) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli4l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5e) * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli3l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOlj2l,cOli5l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4e) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3l)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4l)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3l,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli4e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOlj2l,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOlj2l,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli3l,cOli4l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli4e,cOli5e) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli3l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli4e,cOli6l)*cOlf(cOli5e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli4l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli5e,cOli6l)*cOlf(cOli4e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli4e,
+      cOli5e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli5e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli2l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOlj2l,
+      cOli4l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli3e,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli4l,cOli6l)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli5e,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli3l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli3e,
+      cOli4l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli5e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli5e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5e)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOlj2l,cOli5e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4l,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli2l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)*cOlf(cOli4l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOlj2l,
+      cOli5e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5e)*cOlf(cOlj2l,
+      cOli3e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli4l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli5e) * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli3e,cOli6l)*cOlf(cOli5e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli4l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli5e,cOli6l)*cOlf(cOli3e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli3e,
+      cOli5e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli4e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli6l)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli2l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOlj2l,
+      cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOlj2l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli3e,cOli6l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli3l,cOli6l)*cOlf(cOli3e,
+      cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli4e,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli4l,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli3e,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOlj2l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOlj2l,cOli4e,cOli5l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli3l)*cOlf(cOlj2l,cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli4e)*cOlf(cOli2l,cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOlj2l,cOli4e)*cOlf(cOli2l,cOli3e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOlj2l,cOli5l)*cOlf(cOlj2l,cOli3e,cOli3l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli6l)*cOlf(cOli3e,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5l,cOli6l)*cOlf(cOli3e,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli2l,cOlj2l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOlj2l,cOli3l,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli2l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5l,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3e)*cOlf(cOlj2l,
+      cOli4e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli3l)*cOlf(cOli2l,
+      cOlj2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli4e)*cOlf(cOlj2l,
+      cOli3e,cOli5l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOli2l,
+      cOlj2l,cOli3l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOlj2l,cOli5l)*cOlf(cOlj2l,
+      cOli3e,cOli4e) * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli3e,cOli6l)*cOlf(cOli4e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli3l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli4e,cOli6l)*cOlf(cOli3e,
+      cOli5l,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5e,cOli5l)*cOlf(cOli2e,cOli5l,cOli6l)*cOlf(cOli3e,
+      cOli4e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli2l,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli4e,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3e,cOli5l)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli3l,cOli5l)*cOlf(cOli3e,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4e,cOli5l)*cOlf(cOli3e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli4l,cOli5l)*cOlf(cOli3e,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOli2l,cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli1l,cOli2e,cOli9e)*cOlf(cOli1l,
+      cOli5e,cOli5l)*cOlf(cOli3e,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli3l,cOli5e,cOli6l)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli2l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli4e,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOli3l,
+      cOli4e,cOli9e)*cOlf(cOli3l,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli3e,cOli5l)*cOlf(cOli4e,
+      cOli5e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli5e,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli3l,cOli5l)*cOlf(cOli3e,
+      cOli4l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4l,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli4e,cOli5l)*cOlf(cOli3e,
+      cOli5e,cOli6l) * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli4e,cOli6l)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli4l,cOli5l)*cOlf(cOli3e,
+      cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)*cOlf(cOli4l,cOli5e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOli2l,
+      cOli3e,cOli9e)*cOlf(cOli2l,cOli3l,cOli6l)*cOlf(cOli3l,cOli4e,cOli9e)
+       * ( 1 )
+
+       + cOlf(cOli1e,cOli5l,cOli6l)*cOlf(cOli2e,cOli5e,cOli5l)*cOlf(cOli3e,
+      cOli4e,cOli6l) * ( 1 );

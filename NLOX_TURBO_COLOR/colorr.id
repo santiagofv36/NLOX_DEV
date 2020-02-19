@@ -1,0 +1,90 @@
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli4e,cOli5e) = colr(5);
+
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli4e)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie) = colr(3);
+
+id cOlf(cOli1e,cOli2e,cOlj2r)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie)*cOlf(cOli3e,cOli5e,cOli0r?!cOlie) = colr(1);
+
+id cOlf(cOli1e,cOlj2r,cOli4e)*cOlf(cOli2e,cOli3e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie) = colr(13);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOli4e,cOli1r?!cOlie)*cOlf(cOli5e,cOli0r?!cOlie,cOli1r?!cOlie) = colr(27);
+
+id cOlf(cOli1e,cOlj2r,cOli3e)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli4e,cOli5e,cOli0r?!cOlie) = colr(9);
+
+id cOlf(cOli1e,cOlj2r,cOli3e)*cOlf(cOli2e,cOli5e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie) = colr(11);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli5e)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie) = colr(25);
+
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOli3e,cOli5e,cOli1r?!cOlie)*cOlf(cOli4e,cOli1r?!cOlie,cOli0r?!cOlie) = colr(7);
+
+id cOlf(cOli1e,cOlj2r,cOli5e)*cOlf(cOli2e,cOli4e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie) = colr(17);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOli5e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli4e) = colr(23);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli5e) = colr(32);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli5e)*cOlf(cOli3e,cOli4e,cOli0r?!cOlie) = colr(20);
+
+id cOlf(cOli1e,cOlj2r,cOli4e)*cOlf(cOli2e,cOli5e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie) = colr(14);
+
+id cOlf(cOli1e,cOli0r?!cOlie,cOli1r?!cOlie)*cOlf(cOli2e,cOli5e,cOli1r?!cOlie)*cOlf(cOli3e,cOli4e,cOli0r?!cOlie) = colr(44);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli3e)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie) = colr(30);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli3e)*cOlf(cOli4e,cOli5e,cOli0r?!cOlie) = colr(18);
+
+id cOlf(cOli1e,cOli0r?!cOlie,cOli1r?!cOlie)*cOlf(cOli2e,cOli3e,cOli0r?!cOlie)*cOlf(cOli4e,cOli5e,cOli1r?!cOlie) = colr(42);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOli4e,cOli1r?!cOlie)*cOlf(cOli3e,cOli1r?!cOlie,cOli0r?!cOlie) = colr(40);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOli3e,cOli1r?!cOlie)*cOlf(cOli5e,cOli1r?!cOlie,cOli0r?!cOlie) = colr(34);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOli5e,cOli1r?!cOlie)*cOlf(cOli4e,cOli0r?!cOlie,cOli1r?!cOlie) = colr(28);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli3e)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie) = colr(36);
+
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli5e)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie) = colr(4);
+
+id cOlf(cOli1e,cOli2e,cOlj2r)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie)*cOlf(cOli3e,cOli4e,cOli0r?!cOlie) = colr(2);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOli5e,cOli1r?!cOlie)*cOlf(cOli3e,cOli0r?!cOlie,cOli1r?!cOlie) = colr(33);
+
+id cOlf(cOli1e,cOli2e,cOlj2r)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie)*cOlf(cOli4e,cOli5e,cOli0r?!cOlie) = colr(0);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOlj2r,cOli4e,cOli5e) = colr(26);
+
+id cOlf(cOli1e,cOlj2r,cOli4e)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli3e,cOli5e,cOli0r?!cOlie) = colr(12);
+
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOli3e,cOli1r?!cOlie,cOli0r?!cOlie)*cOlf(cOli4e,cOli5e,cOli1r?!cOlie) = colr(8);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli4e)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie) = colr(24);
+
+id cOlf(cOli1e,cOlj2r,cOli3e)*cOlf(cOli2e,cOli4e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli5e,cOli0r?!cOlie) = colr(10);
+
+id cOlf(cOli1e,cOli2e,cOli0r?!cOlie)*cOlf(cOli3e,cOli4e,cOli1r?!cOlie)*cOlf(cOli5e,cOli1r?!cOlie,cOli0r?!cOlie) = colr(6);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOli4e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli5e) = colr(22);
+
+id cOlf(cOli1e,cOlj2r,cOli5e)*cOlf(cOli2e,cOli3e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli4e,cOli0r?!cOlie) = colr(16);
+
+id cOlf(cOli1e,cOli0r?!cOlie,cOli1r?!cOlie)*cOlf(cOli2e,cOli4e,cOli1r?!cOlie)*cOlf(cOli3e,cOli5e,cOli0r?!cOlie) = colr(43);
+
+id cOlf(cOli1e,cOlj2r,cOli5e)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli3e,cOli4e,cOli0r?!cOlie) = colr(15);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOli3e,cOli0r?!cOlie)*cOlf(cOlj2r,cOli4e,cOli5e) = colr(21);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOli3e,cOli1r?!cOlie)*cOlf(cOli4e,cOli1r?!cOlie,cOli0r?!cOlie) = colr(39);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli5e)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie) = colr(31);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli0r?!cOlie)*cOlf(cOlj2r,cOli3e,cOli4e) = colr(38);
+
+id cOlf(cOli1e,cOlj2r,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli4e)*cOlf(cOli3e,cOli5e,cOli0r?!cOlie) = colr(19);
+
+id cOlf(cOli1e,cOli4e,cOli0r?!cOlie)*cOlf(cOli2e,cOli1r?!cOlie,cOli0r?!cOlie)*cOlf(cOli3e,cOli5e,cOli1r?!cOlie) = colr(35);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOli1r?!cOlie,cOli0r?!cOlie)*cOlf(cOli3e,cOli4e,cOli1r?!cOlie) = colr(41);
+
+id cOlf(cOli1e,cOli5e,cOli0r?!cOlie)*cOlf(cOli2e,cOlj2r,cOli4e)*cOlf(cOlj2r,cOli3e,cOli0r?!cOlie) = colr(37);
+
+id cOlf(cOli1e,cOli3e,cOli0r?!cOlie)*cOlf(cOli2e,cOli0r?!cOlie,cOli1r?!cOlie)*cOlf(cOli4e,cOli5e,cOli1r?!cOlie) = colr(29);
+
