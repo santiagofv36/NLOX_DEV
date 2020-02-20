@@ -21,8 +21,8 @@ def UniqueChainsReplaced(filename):
     UniqueChainsFile = "UniqueChains.frm"
     UCF = open(UniqueChainsFile,"w")
     
-    UniqueChainsReplacedFile = "UniqueChains"+filename
-    UCRF = open(UniqueChainsReplacedFile,"w")
+    ColorProductsUniqueChains = 'ColorProductsUniqueChains.id.frm'
+    UCRF = open(ColorProductsUniqueChains,"w")
     
     ### Global Header 
     Header  = '#-\n'+'off statistics;\n'
@@ -31,15 +31,15 @@ def UniqueChainsReplaced(filename):
     Header += '#call NLOXSimplifyColorHeader\n'
     Header += '#call DefineTopologies\n'
     UCF.write(Header)
-    UCRF.write(Header)
+    UCRFHeader = Header
     ###
     
-    
+    UCRFBody = ''
     Expressions = aTools.splitExpressions(filename)
     seen = {}
     ChainCount = 0
     for Term in Expressions:
-        UCRFLine = 'l '+Term['name'] + ' = '
+        UCRFBody += 'l '+Term['name'] + ' = '
         Chain = Term['value'][0][0]
         NewChain = ''
         Prefactor = ''
@@ -51,25 +51,29 @@ def UniqueChainsReplaced(filename):
                 NewChain += i
             else:
                 Prefactor += i
-        UCRFLine += Prefactor 
-        UCRF.write(UCRFLine)
+        UCRFBody += Prefactor 
+        #UCRF.write(UCRFLine)
         if NewChain in seen.keys():
-            UCRFLine = seen[NewChain] + ';\n'
-            UCRF.write(UCRFLine)
+            UCRFBody += seen[NewChain] + ';\n'
+            #UCRF.write(UCRFLine)
             continue
         if (len(NewChain)):
             ChainCount +=1
-            UCFLine = "l [UC["+str(ChainCount)+"]] = "+NewChain+";\n"
+            UCFLine = "l [UC("+str(ChainCount)+")] = "+NewChain+";\n"
             UCF.write(UCFLine)
-            seen[NewChain] = 'UC['+str(ChainCount)+']'
+            seen[NewChain] = 'UC('+str(ChainCount)+')'
             
-            UCRFLine = seen[NewChain]
-            UCRF.write(UCRFLine)
-        UCRF.write(';\n')
-    
-    UCRFLine  = '#include FillUniqueChains.id\n'
-    UCRFLine += '#call NLOXSimplifyColorPrintEnd\n'
-    
+            UCRFBody += seen[NewChain]
+            #UCRF.write(UCRFLine)
+        #UCRF.write(';\n')
+        UCRFBody += ';\n'
+        
+    UCRFHeader  += 'Table, sparse, UC(1);\n'
+    UCRFHeader  += '#include FillUniqueChains.id\n'
+    UCRF.write(UCRFHeader)
+    UCRF.write(UCRFBody)
+    UCRFLine = '#call NLOXSimplifyColorPrintEnd\n'
+    UCRF.write(UCRFLine)
     
     
     UCFLine = ''
@@ -92,8 +96,9 @@ def UniqueChainsReplaced(filename):
     UCFLine += '#call NLOXSimplifyColorPrintEnd\n'
     UCF.write(UCFLine)
 
-aTools.runForm("ColorProducts.id.frm", "COLOR.out",False,'form')
-UniqueChainsReplaced('COLOR.out')
-aTools.runForm("UniqueChains.frm","UniqueChains.frm.out",False,'form')
-aTools.FormExprsToTable("UniqueChains.frm.out","FillUniqueChains.id")
+aTools.runForm('ColorProducts.id.frm', 'PreProcColor.out',False,'form')
+UniqueChainsReplaced('PreProcColor.out')
+aTools.runForm('UniqueChains.frm','UniqueChains.frm.out',False,'form')
+aTools.FormExprsToTable('UniqueChains.frm.out','FillUniqueChains.id')
+aTools.runForm('ColorProductsUniqueChains.id.frm','ColorProductsUniqueChains.id.frm.out',False,'form')
 

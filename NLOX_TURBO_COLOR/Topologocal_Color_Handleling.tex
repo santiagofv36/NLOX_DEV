@@ -317,6 +317,40 @@ for exprssions with $6$ \FNodes there are only $2$ possible graphs that are not 
 \end{tikzpicture}  
 \end{center}
 
+while for $8$ \FNodes we have the structures:
+\begin{center}
+\begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
+  \tikzstyle{equation} = [
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+  \node[] at (0,0) [] {};
+  \node[state] (1) at (1,0) [] {};
+  \node[state] (2) at (0.3090,0.9510) [] {};
+  \node[state] (3) at (-0.809017, 0.587785) [] {};
+  \node[state] (4) at (-0.809017, -0.587785) [] {};
+  \node[state] (5) at (0.3090,-0.9510) [] {};
+  \node[state] (6) [right of=1] {};
+  \node[state] (7) [above right of=2] {};
+  \node[state] (8) [below right of=5] {};
+  \draw[red] 
+        (1) edge  node {} (2)
+        (2) edge  node {} (3)
+        (3) edge  node {} (4)
+        (4) edge  node {} (5)
+        (5) edge  node {} (1)
+        (1) edge  node {} (6)
+        (2) edge  node {} (7)
+        (5) edge  node {} (8)
+        (6) edge  node {} (7)
+        (6) edge  node {} (8)
+        (7) edge  node {} (3)
+        (8) edge  node {} (4);
+     
+  
+
+  \end{tikzpicture}  
+\end{center}
 
 
 
