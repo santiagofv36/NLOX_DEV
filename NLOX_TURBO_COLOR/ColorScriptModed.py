@@ -16,7 +16,10 @@ def UniqueChains(seq):
         if (len(NewChain)): seen.append(NewChain)
     return seen
 
-def UniqueChainsReplaced(filename):
+def UniqueChainsReplaced(RawFile):
+    
+    aTools.runForm(RawFile,'PreProcColor.out',False,'form')
+    OriginalExpressions = aTools.splitExpressions('ColorProducts.Parse.out')
     
     UniqueChainsFile = "UniqueChains.frm"
     UCF = open(UniqueChainsFile,"w")
@@ -35,7 +38,7 @@ def UniqueChainsReplaced(filename):
     ###
     
     UCRFBody = ''
-    Expressions = aTools.splitExpressions(filename)
+    Expressions = aTools.splitExpressions('PreProcColor.out')
     seen = {}
     ChainCount = 0
     for Term in Expressions:
@@ -51,6 +54,10 @@ def UniqueChainsReplaced(filename):
                 NewChain += i
             else:
                 Prefactor += i
+        InvPrefactor = Prefactor.replace('*','')
+        if(len(Prefactor)==0):
+            InvPrefactor = '1'
+        if(InvPrefactor=='- '): InvPrefactor = '-1'
         UCRFBody += Prefactor 
         #UCRF.write(UCRFLine)
         if NewChain in seen.keys():
@@ -59,7 +66,8 @@ def UniqueChainsReplaced(filename):
             continue
         if (len(NewChain)):
             ChainCount +=1
-            UCFLine = "l [UC("+str(ChainCount)+")] = "+NewChain+";\n"
+            res = next((sub for sub in OriginalExpressions if sub['name'] == Term['name']), None)
+            UCFLine = 'l [UC('+str(ChainCount)+')] = ('+res['value'][0][0]+')/('+InvPrefactor+');\n'
             UCF.write(UCFLine)
             seen[NewChain] = 'UC('+str(ChainCount)+')'
             
@@ -77,8 +85,8 @@ def UniqueChainsReplaced(filename):
     
     
     UCFLine = ''
-    UCFLine += '#call ChainToTF\n'
-    UCFLine += '.sort             \n'
+    UCFLine += '*#call ChainToTF\n'
+    UCFLine += '*.sort             \n'
     UCFLine += '#call NLOXSimplifyColorTranslateIndices \n'
     UCFLine += 'argument;                     \n'
     UCFLine += 'id cOli1e = cOlaie1;          \n'
@@ -96,8 +104,7 @@ def UniqueChainsReplaced(filename):
     UCFLine += '#call NLOXSimplifyColorPrintEnd\n'
     UCF.write(UCFLine)
 
-aTools.runForm('ColorProducts.id.frm', 'PreProcColor.out',False,'form')
-UniqueChainsReplaced('PreProcColor.out')
+UniqueChainsReplaced('ColorProducts.id.frm')
 aTools.runForm('UniqueChains.frm','UniqueChains.frm.out',False,'form')
 aTools.FormExprsToTable('UniqueChains.frm.out','FillUniqueChains.id')
 aTools.runForm('ColorProductsUniqueChains.id.frm','ColorProductsUniqueChains.id.frm.out',False,'form')

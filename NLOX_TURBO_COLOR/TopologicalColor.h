@@ -1,9 +1,13 @@
-#define Legacy "2"
+#define Legacy "1"
 
 #procedure DefineTopologies
 
-CF FNode;
+#if (`Legacy'==0)||(`Legacy'==1)
+CF FFLink(symmetric);
+#else
 CF FFLink;
+#endif
+CF FNode;
 auto s x;
 
 #endprocedure
@@ -33,7 +37,7 @@ endrepeat;
 #else if `Legacy' == 1
 #message >> Using New Color
 repeat;
-id FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla1?,cOla4?,cOla5?,x2?) =  FFLink(x1,x2)*FNode(cOla2,cOla3,cOla0,x1)*FNode(cOla4,cOla5,cOla0,x2);
+id once FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla1?,cOla4?,cOla5?,x2?) =  FFLink(x1,x2)*FNode(cOla2,cOla3,cOla0,x1)*FNode(cOla4,cOla5,cOla0,x2);
 id FFLink(x1?,x2?)^3 = NA*NC;
 id FFLink(x1?,x2?)^2*FFLink(x1?,x3?)*FFLink(x2?,x4?) = NC*FFLink(x3,x4);
 endrepeat;
@@ -52,10 +56,8 @@ id FFLink(x1?,x2?,x3?,x4?)*FFLink(x1?,x2?,x5?,x6?)*FFLink(x1?,x2?,x7?,x8?) = NA*
 id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x1?,x3?,x15?,x16?)*FFLink(x2?,x4?,x17?,x18?) = NC*FFLink(x3,x4,x16,x18);
 id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x1?,x3?,x15?,x16?)*FFLink(x4?,x2?,x18?,x17?) = NC*FFLink(x3,x4,x16,x18);
 id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x3?,x1?,x16?,x15?)*FFLink(x4?,x2?,x18?,x17?) = NC*FFLink(x3,x4,x16,x18);
-
-
 endrepeat;
-#endif
+
 
 
 #do i=1,10
@@ -80,7 +82,7 @@ id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x1,x2,x12,x12)*
 id FFLink(x2?,x1?,x12?,x11?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x2,x1,x12,x12)*FFLink(x3,x1,x13,x11);
 
 #enddo
-
+#endif
 
 #do i=1,12
     #do j=1,12
@@ -135,13 +137,21 @@ id FFLink(x1?,x2?)*FNode(cOla1?,cOla0,cOla2?,x1?)*FNode(cOla3?,cOla0,cOla4?,x2?)
 id FFLink(x1?,x2?)*FNode(cOla1?,cOla0,cOla2?,x1?)*FNode(cOla3?,cOla4?,cOla0,x2?)= -FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,x2,cOla2,x1);
 
 id FFLink(x1?,x2?)*FNode(cOla1?,cOla2?,cOla0,x1?)*FNode(cOla3?,cOla4?,cOla0,x2?)=  FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,cOla2,x2,x1);
-#else
+#else if `Legacy'==1
 #message >> Using New Inverse
 
 repeat;
 id once FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla0,cOla3?,cOla4?,x2?) =  FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,cOla2,x2,x1);
 endrepeat;
 
+#else 
+#message >> Inverse Debug
+
+#do i=1,10
+repeat;
+id once FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla0,cOla3?,cOla4?,x2?) =  FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,cOla2,x2,x1);
+endrepeat;
+#enddo
 
 #endif
     
