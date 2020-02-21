@@ -1,9 +1,9 @@
-#define Legacy "0"
+#define Legacy "2"
 
 #procedure DefineTopologies
 
 CF FNode;
-CF FFLink(symmetric);
+CF FFLink;
 auto s x;
 
 #endprocedure
@@ -30,22 +30,57 @@ id once FNode(cOla2?,cOla3?,cOla1?!{cOla0},x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) 
 id FFLink(x1?,x2?)^3 = NA*NC;
 id FFLink(x1?,x2?)^2*FFLink(x1?,x3?)*FFLink(x2?,x4?) = NC*FFLink(x3,x4);
 endrepeat;
-#else
+#else if `Legacy' == 1
 #message >> Using New Color
 repeat;
-id once FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla1?,cOla4?,cOla5?,x2?) =  FFLink(x1,x2)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla0,cOla4,cOla5,x2);
-id once FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla4?,cOla1?,cOla5?,x2?) = -FFLink(x1,x2)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla4,cOla0,cOla5,x2);
-id once FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) =  FFLink(x1,x2)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla4,cOla5,cOla0,x2);
-
-id once FNode(cOla2?,cOla1?!{cOla0},cOla3?,x1?)*FNode(cOla4?,cOla1?,cOla5?,x2?) =  FFLink(x1,x2)*FNode(cOla2,cOla0,cOla3,x1)*FNode(cOla4,cOla0,cOla5,x2);
-id once FNode(cOla2?,cOla1?!{cOla0},cOla3?,x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) = -FFLink(x1,x2)*FNode(cOla2,cOla0,cOla3,x1)*FNode(cOla4,cOla5,cOla0,x2);
-
-id once FNode(cOla2?,cOla3?,cOla1?!{cOla0},x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) =  FFLink(x1,x2)*FNode(cOla2,cOla3,cOla0,x1)*FNode(cOla4,cOla5,cOla0,x2);
-
+id FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla1?,cOla4?,cOla5?,x2?) =  FFLink(x1,x2)*FNode(cOla2,cOla3,cOla0,x1)*FNode(cOla4,cOla5,cOla0,x2);
 id FFLink(x1?,x2?)^3 = NA*NC;
 id FFLink(x1?,x2?)^2*FFLink(x1?,x3?)*FFLink(x2?,x4?) = NC*FFLink(x3,x4);
 endrepeat;
+#else
+repeat;
+id FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla1?,cOla4?,cOla5?,x2?) = FFLink(x1,x2,1,1)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla0,cOla4,cOla5,x2);
+id FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla4?,cOla1?,cOla5?,x2?) = FFLink(x1,x2,1,2)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla4,cOla0,cOla5,x2);
+id FNode(cOla1?!{cOla0},cOla2?,cOla3?,x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) = FFLink(x1,x2,1,3)*FNode(cOla0,cOla2,cOla3,x1)*FNode(cOla4,cOla5,cOla0,x2);
+
+id FNode(cOla2?,cOla1?!{cOla0},cOla3?,x1?)*FNode(cOla4?,cOla1?,cOla5?,x2?) = FFLink(x1,x2,2,2)*FNode(cOla2,cOla0,cOla3,x1)*FNode(cOla4,cOla0,cOla5,x2);
+id FNode(cOla2?,cOla1?!{cOla0},cOla3?,x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) = FFLink(x1,x2,2,3)*FNode(cOla2,cOla0,cOla3,x1)*FNode(cOla4,cOla5,cOla0,x2);
+
+id FNode(cOla2?,cOla3?,cOla1?!{cOla0},x1?)*FNode(cOla4?,cOla5?,cOla1?,x2?) = FFLink(x1,x2,3,3)*FNode(cOla2,cOla3,cOla0,x1)*FNode(cOla4,cOla5,cOla0,x2);
+
+id FFLink(x1?,x2?,x3?,x4?)*FFLink(x1?,x2?,x5?,x6?)*FFLink(x1?,x2?,x7?,x8?) = NA*NC;
+id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x1?,x3?,x15?,x16?)*FFLink(x2?,x4?,x17?,x18?) = NC*FFLink(x3,x4,x16,x18);
+id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x1?,x3?,x15?,x16?)*FFLink(x4?,x2?,x18?,x17?) = NC*FFLink(x3,x4,x16,x18);
+id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x3?,x1?,x16?,x15?)*FFLink(x4?,x2?,x18?,x17?) = NC*FFLink(x3,x4,x16,x18);
+
+
+endrepeat;
 #endif
+
+
+#do i=1,10
+    #do j=`i'+1,10
+        id FFLink(`j',`i',x1?,x2?) = FFLink(`i',`j',x2,x1);
+    #enddo
+#enddo
+
+#do i=1,20
+
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x13?,x12?)*FFLink(x4?,x2?,x11?,x14?) = FFLink(x1,x2,x13,x14)*FFLink(x1,x3,x11,x12)*FFLink(x4,x2,x11,x12);
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x12?,x13?)*FFLink(x4?,x2?,x11?,x14?) = FFLink(x1,x2,x13,x14)*FFLink(x3,x1,x12,x11)*FFLink(x4,x2,x11,x12);
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x13?,x12?)*FFLink(x2?,x4?,x14?,x11?) = FFLink(x1,x2,x13,x14)*FFLink(x1,x3,x11,x12)*FFLink(x2,x4,x12,x11);
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x12?,x13?)*FFLink(x2?,x4?,x14?,x11?) = FFLink(x1,x2,x13,x14)*FFLink(x3,x1,x12,x11)*FFLink(x2,x4,x12,x11);
+
+id FFLink(?args,x1?,x1?) = x0*FFLink(?args,x1,x1);
+if(count(x0,1)==count(FFLink,1)) id FFLink(?args,x1?,x1?) = FFLink(?args);
+id x0 = 1;
+
+id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x12?,x13?) = -FFLink(x1,x2,x12,x12)*FFLink(x1,x3,x11,x13); 
+id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x1,x2,x12,x12)*FFLink(x3,x1,x13,x11);
+id FFLink(x2?,x1?,x12?,x11?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x2,x1,x12,x12)*FFLink(x3,x1,x13,x11);
+
+#enddo
+
 
 #do i=1,12
     #do j=1,12
@@ -56,7 +91,7 @@ endrepeat;
 renumber 0;
 
 #do i=1,12
-    #do j=`i'+1,12
+    #do j=1,12
         id FFLink(N`i'_?,N`j'_?)=FFLink(`i',`j');
     #enddo;
 #enddo;
@@ -89,6 +124,9 @@ id FNode(cOla0,cOla0,cOla0,x1?)^3 = FNode(cOla0,cOla0,cOla0,x1);
 ***
 ***************************************************************************
 
+
+#if `Legacy' == 0
+#message >> Using Legacy Inverse
 id FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla0,cOla3?,cOla4?,x2?)=  FNode(x1,cOla3,cOla4,x2)*FNode(x2,cOla1,cOla2,x1);
 id FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla3?,cOla0,cOla4?,x2?)= -FNode(cOla3,x1,cOla4,x2)*FNode(x2,cOla1,cOla2,x1);
 id FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla3?,cOla4?,cOla0,x2?)=  FNode(cOla3,cOla4,x1,x2)*FNode(x2,cOla1,cOla2,x1);
@@ -97,6 +135,15 @@ id FFLink(x1?,x2?)*FNode(cOla1?,cOla0,cOla2?,x1?)*FNode(cOla3?,cOla0,cOla4?,x2?)
 id FFLink(x1?,x2?)*FNode(cOla1?,cOla0,cOla2?,x1?)*FNode(cOla3?,cOla4?,cOla0,x2?)= -FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,x2,cOla2,x1);
 
 id FFLink(x1?,x2?)*FNode(cOla1?,cOla2?,cOla0,x1?)*FNode(cOla3?,cOla4?,cOla0,x2?)=  FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,cOla2,x2,x1);
+#else
+#message >> Using New Inverse
+
+repeat;
+id once FFLink(x1?,x2?)*FNode(cOla0,cOla1?,cOla2?,x1?)*FNode(cOla0,cOla3?,cOla4?,x2?) =  FNode(cOla3,cOla4,x1,x2)*FNode(cOla1,cOla2,x2,x1);
+endrepeat;
+
+
+#endif
     
 *****************************************************************************
 ***
@@ -138,3 +185,15 @@ id FNode(cOla1?,cOla2?,cOla3?,x4?) = cOlf(cOla1,cOla2,cOla3);
 
 
 #endprocedure
+
+
+#procedure NLOXSimplifyChainColor
+    
+    #do i=1,10
+        #do j=1,10
+        id once FFLink(`i',`j') = -2*i_;
+        #enddo
+    #enddo
+
+#endprocedure
+
