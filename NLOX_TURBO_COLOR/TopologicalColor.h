@@ -1,4 +1,5 @@
-#define Legacy "1"
+#define Legacy "2"
+#define N "0"
 
 #procedure DefineTopologies
 
@@ -66,43 +67,103 @@ endrepeat;
     #enddo
 #enddo
 
-#do i=1,20
-
+*#do i=1,20
+*
 *id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x13?,x12?)*FFLink(x4?,x2?,x11?,x14?) = FFLink(x1,x2,x13,x14)*FFLink(x1,x3,x11,x12)*FFLink(x4,x2,x11,x12);
 *id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x12?,x13?)*FFLink(x4?,x2?,x11?,x14?) = FFLink(x1,x2,x13,x14)*FFLink(x3,x1,x12,x11)*FFLink(x4,x2,x11,x12);
 *id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x13?,x12?)*FFLink(x2?,x4?,x14?,x11?) = FFLink(x1,x2,x13,x14)*FFLink(x1,x3,x11,x12)*FFLink(x2,x4,x12,x11);
 *id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x12?,x13?)*FFLink(x2?,x4?,x14?,x11?) = FFLink(x1,x2,x13,x14)*FFLink(x3,x1,x12,x11)*FFLink(x2,x4,x12,x11);
-
-id FFLink(?args,x1?,x1?) = x0*FFLink(?args,x1,x1);
-if(count(x0,1)==count(FFLink,1)) id FFLink(?args,x1?,x1?) = FFLink(?args);
-id x0 = 1;
-
-id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x12?,x13?) = -FFLink(x1,x2,x12,x12)*FFLink(x1,x3,x11,x13); 
-id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x1,x2,x12,x12)*FFLink(x3,x1,x13,x11);
-id FFLink(x2?,x1?,x12?,x11?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x2,x1,x12,x12)*FFLink(x3,x1,x13,x11);
-
-#enddo
+*
+*id FFLink(?args,x1?,x1?) = x0*FFLink(?args,x1,x1);
+*if(count(x0,1)==count(FFLink,1)) id FFLink(?args,x1?,x1?) = FFLink(?args);
+*id x0 = 1;
+*
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x3?,x12?,x13?) = -FFLink(x1,x2,x12,x12)*FFLink(x1,x3,x11,x13); 
+*id FFLink(x1?,x2?,x11?,x12?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x1,x2,x12,x12)*FFLink(x3,x1,x13,x11);
+*id FFLink(x2?,x1?,x12?,x11?)*FFLink(x3?,x1?,x13?,x12?) = -FFLink(x2,x1,x12,x12)*FFLink(x3,x1,x13,x11);
+*
+*#enddo
 #endif
 
-#do i=1,12
-    #do j=1,12
-        id FFLink(`i',`j')=FFLink(N`i'_?,N`j'_?);
-    #enddo;
-#enddo;
+*#do i=1,12
+*    #do j=1,12
+*        id FFLink(`i',`j')=FFLink(N`i'_?,N`j'_?);
+*    #enddo;
+*#enddo;
 
-renumber 0;
-
-#do i=1,12
-    #do j=1,12
-        id FFLink(N`i'_?,N`j'_?)=FFLink(`i',`j');
-    #enddo;
-#enddo;
-
+*renumber 0;
+*
+*#do i=1,12
+*    #do j=1,12
+*        id FFLink(N`i'_?,N`j'_?)=FFLink(`i',`j');
+*    #enddo;
+*#enddo;
+*
 id FNode(cOla0,cOla0,cOla0,x1?) = 1;
+
+
+****
+****   This is a while loop
+****
+
+.sort 
+CF FrozenFFLink;
+CF Consistency(symmetric);
+id FFLink(1,?args) = FrozenFFLink(1,?args);
+#$Done = 0;
 
 #endprocedure
 
 
+
+
+#procedure RecurseClassify
+    
+   #do i=1,1
+    $Break = 0;
+    #if `$Done' == 1
+        #breakdo
+    #endif
+
+****
+****   No choice branch: here we freeze singly-open FNodes if we can do so consistently, if not we break at this level to force on a recall with different choice.
+**** 
+
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
+                                                                                                                                                                            
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
+                                                                                                                                                                         
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
+                                                                                                                                                                          
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
+    
+    if (count(Consistency(1,2,3),1)<count(Consistency,1)) $Break = 1;
+    .sort 
+    #if `$Break'==1
+        #breakdo
+    #endif
+    
+    if (count(FFLink,1)==0) $Done =1;
+    
+****
+****  Choice 1: 
+****
+    
+    id once FrozenFFLink(x1?,x2?,?args1)*FFLink(x1?,x3?,x11?.x13?)*FFLink(x1?,x4?,?args3) = 
+    
+    
+    $Done=1;
+
+
+
+
+#enddo
+    
+#endprocedure
 
 
 #procedure ChainToTF
