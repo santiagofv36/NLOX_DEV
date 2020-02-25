@@ -102,10 +102,6 @@ endrepeat;
 id FNode(cOla0,cOla0,cOla0,x1?) = 1;
 
 
-****
-****   This is a while loop
-****
-
 .sort 
 CF FrozenFFLink;
 S Inconsistent,Left,Replaced;
@@ -204,6 +200,7 @@ id FFLink(?args) = FFLink(?args)*Left;
 ****
 ****  Next we pick the following node to be frozen           
 ****
+
     $BreakHere = 0;
     #do i=1,8
     #message >> Attempting to freeze node `i'
@@ -235,17 +232,17 @@ id FFLink(?args) = FFLink(?args)*Left;
     
     #message >> Submtting node `$Which' as written
                                        
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x21?,x32?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x21,x32)*FrozenFFLink($Which,x4,x13,x43);
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x21?,x32?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x21,x32)*FrozenFFLink(x4,$Which,x43,x13);
+   id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink($Which,x4,x13,x43);
+   id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink(x4,$Which,x43,x13);
 
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x21?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x21)*FrozenFFLink($Which,x4,x13,x43);
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x21?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x21)*FrozenFFLink(x4,$Which,x43,x13);
+   id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink($Which,x4,x13,x43);
+   id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink(x4,$Which,x43,x13);
 
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x21?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink($Which,x4,x21,x43);
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x21?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink(x4,$Which,x43,x21);
+   id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink($Which,x4,x13,x43);
+   id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink(x4,$Which,x43,x13);
 
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x21?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink($Which,x4,x21,x43);
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x21?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink(x4,$Which,x43,x21);
+   id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink($Which,x4,x21,x43);
+   id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink(x4,$Which,x43,x21);
     
     #call RecurseClassify(`$Which')
     
@@ -253,27 +250,33 @@ id FFLink(?args) = FFLink(?args)*Left;
 ****  Choice 2:
 ****
    
+   #if `$Which'==1
+        #breakdo
+   #endif
+   
     #message >> Swapping the endpoints of node `$Which'
     
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
+    if(count(Replaced,1)==0) id FrozenFFLink($Which,x2?,x11?,x11?)*FrozenFFLink($Which,x3?,x12?,x32?)*FrozenFFLink($Which,x4?,x13?,x43?) = -(Left^-2)*Replaced*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
+    if(count(Replaced,1)==0) id FrozenFFLink($Which,x2?,x11?,x11?)*FrozenFFLink($Which,x3?,x12?,x32?)*FrozenFFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*Replaced*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
 
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
-    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
-
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
-
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
-    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
+    if(count(Replaced,1)==0) id FrozenFFLink($Which,x2?,x11?,x11?)*FrozenFFLink(x3?,$Which,x32?,x12?)*FrozenFFLink($Which,x4?,x13?,x43?) = -(Left^-2)*Replaced*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
+    if(count(Replaced,1)==0) id FrozenFFLink($Which,x2?,x11?,x11?)*FrozenFFLink(x3?,$Which,x32?,x12?)*FrozenFFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*Replaced*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
+                             
+    if(count(Replaced,1)==0) id FrozenFFLink(x2?,$Which,x11?,x11?)*FrozenFFLink($Which,x3?,x12?,x32?)*FrozenFFLink($Which,x4?,x13?,x43?) = -(Left^-2)*Replaced*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
+    if(count(Replaced,1)==0) id FrozenFFLink(x2?,$Which,x11?,x11?)*FrozenFFLink($Which,x3?,x12?,x32?)*FrozenFFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*Replaced*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
+                             
+    if(count(Replaced,1)==0) id FrozenFFLink(x2?,$Which,x11?,x11?)*FrozenFFLink(x3?,$Which,x32?,x12?)*FrozenFFLink($Which,x4?,x13?,x43?) = -(Left^-2)*Replaced*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
+    if(count(Replaced,1)==0) id FrozenFFLink(x2?,$Which,x11?,x11?)*FrozenFFLink(x3?,$Which,x32?,x12?)*FrozenFFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*Replaced*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
     
+    id Replaced = 1;
+                            
     #call RecurseClassify(`$Which')
     
     #message >> No more options for node `$Which', exiting this level
     #message >> Submitting a swap of node `Last'
     $Which = `Last';
     .sort 
-    
+
 
 #enddo
     
