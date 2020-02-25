@@ -108,58 +108,172 @@ id FNode(cOla0,cOla0,cOla0,x1?) = 1;
 
 .sort 
 CF FrozenFFLink;
-CF Consistency(symmetric);
-id FFLink(1,?args) = FrozenFFLink(1,?args);
+S Inconsistent,Left,Replaced;
+CF Who,Consistency;
+id once FFLink(1,?args) = FrozenFFLink(1,?args);
+id FFLink(?args) = FFLink(?args)*Left;
+.sort
 #$Done = 0;
+#$Start = 1;
+#call RecurseClassify(`$Start')
 
 #endprocedure
 
 
 
 
-#procedure RecurseClassify
-    
+#procedure RecurseClassify(Last)
+    #message >> RecurseClassify has been called!
+    $Consistent=1;
+    $Which = `Last';
+    .sort
    #do i=1,1
-    $Break = 0;
-    #if `$Done' == 1
+    #if (`$Done' == 1)
         #breakdo
     #endif
 
 ****
-****   No choice branch: here we freeze singly-open FNodes if we can do so consistently, if not we break at this level to force on a recall with different choice.
+****   No choice branch: here we freeze singly-open FNodes if we can do so consistently, 
+****   if not we break at this level to force on a recall with different choice.
 **** 
-
-    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
-    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
-                                                                                                                                                                            
-    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
-    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
-                                                                                                                                                                         
-    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
-    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
-                                                                                                                                                                          
-    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
-    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x11,x12,x13)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
     
-    if (count(Consistency(1,2,3),1)<count(Consistency,1)) $Break = 1;
-    .sort 
-    #if `$Break'==1
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x21,x32)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x21,x32)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FFLink(x4,x1,x43,x13);
+                                                                                                                                                                            
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x21,x32)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x21,x32)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FFLink(x4,x1,x43,x13);
+                                                                                                                                                                         
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x21,x32)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x21,x32)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FFLink(x4,x1,x43,x13);
+                                                                                                                                                                          
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = Consistency(x21,x32)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = Consistency(x21,x32)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FFLink(x4,x1,x43,x13);
+    
+    id Consistency(x1?,x1?) = Inconsistent;
+    id Consistency(x1?,x2?) = 1;
+    
+    if (count(Inconsistent,1)) $Consistent=0;
+    .sort
+    #if `$Consistent'==0
+        id Inconsistent = 1;
+        $Which = `Last';
+        #message >> Inconsistent, we are submitting a swap of node `$Which'
+        .sort
         #breakdo
+    #else
+        #message >> At this stage everything is consistent, continuing!
     #endif
     
-    if (count(FFLink,1)==0) $Done =1;
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = (Left^-1)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = (Left^-1)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
+
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x13?,x43?) = (Left^-1)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x13?) = (Left^-1)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x1,x3,x12,x32)*FrozenFFLink(x4,x1,x43,x13);
+
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = (Left^-1)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = (Left^-1)*FrozenFFLink(x1,x2,x11,x21)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
+
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x13?,x43?) = (Left^-1)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FrozenFFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x13?) = (Left^-1)*FrozenFFLink(x2,x1,x21,x11)*FrozenFFLink(x3,x1,x32,x12)*FrozenFFLink(x4,x1,x43,x13);
+
+    if (count(Left,1)==0) $Done = 1;
+    .sort
+    #if `$Done'==1
+    #message >> We recieved a signal indicating we are done, exiting now...
+    #else
+    #message >> Still not done
+    #endif
+                            
+****
+****  Now we make the target nodes be consistent.
+****
+    
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FFLink(x1?,x3?,x21?,x32?)*FFLink(x1?,x4?,x13?,x43?) = -FrozenFFLink(x1,x2,x21,x21)*FFLink(x1,x3,x11,x32)*FFLink(x1,x4,x13,x43);
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FFLink(x1?,x3?,x21?,x32?)*FFLink(x4?,x1?,x43?,x13?) = -FrozenFFLink(x1,x2,x21,x21)*FFLink(x1,x3,x11,x32)*FFLink(x4,x1,x43,x13);
+
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FFLink(x3?,x1?,x32?,x21?)*FFLink(x1?,x4?,x13?,x43?) = -FrozenFFLink(x1,x2,x21,x21)*FFLink(x3,x1,x32,x11)*FFLink(x1,x4,x13,x43); 
+    id FrozenFFLink(x1?,x2?,x11?,x21?)*FFLink(x3?,x1?,x32?,x21?)*FFLink(x4?,x1?,x43?,x13?) = -FrozenFFLink(x1,x2,x21,x21)*FFLink(x3,x1,x32,x11)*FFLink(x4,x1,x43,x13);
+
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FFLink(x1?,x3?,x12?,x32?)*FFLink(x1?,x4?,x21?,x43?) = -FrozenFFLink(x2,x1,x21,x21)*FFLink(x1,x3,x12,x32)*FFLink(x1,x4,x11,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FFLink(x1?,x3?,x12?,x32?)*FFLink(x4?,x1?,x43?,x21?) = -FrozenFFLink(x2,x1,x21,x21)*FFLink(x1,x3,x12,x32)*FFLink(x4,x1,x43,x11);
+
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FFLink(x3?,x1?,x32?,x12?)*FFLink(x1?,x4?,x21?,x43?) = -FrozenFFLink(x2,x1,x21,x21)*FFLink(x3,x1,x32,x12)*FFLink(x1,x4,x11,x43); 
+    id FrozenFFLink(x2?,x1?,x21?,x11?)*FFLink(x3?,x1?,x32?,x12?)*FFLink(x4?,x1?,x43?,x21?) = -FrozenFFLink(x2,x1,x21,x21)*FFLink(x3,x1,x32,x12)*FFLink(x4,x1,x43,x11); 
+    
     
 ****
-****  Choice 1: 
+****  Next we pick the following node to be frozen           
+****
+    $BreakHere = 0;
+    #do i=1,8
+    #message >> Attempting to freeze node `i'
+    id FrozenFFLink(`i',x2?,x11?,x11?)*FFLink(`i',x3?,x21?,x32?)*FFLink(`i',x4?,x13?,x43?) = -Replaced*FrozenFFLink(`i',x2,x21,x21)*FFLink(`i',x3,x11,x32)*FFLink(`i',x4,x13,x43);
+    id FrozenFFLink(`i',x2?,x11?,x11?)*FFLink(`i',x3?,x21?,x32?)*FFLink(x4?,`i',x43?,x13?) = -Replaced*FrozenFFLink(`i',x2,x21,x21)*FFLink(`i',x3,x11,x32)*FFLink(x4,`i',x43,x13);
+
+    id FrozenFFLink(`i',x2?,x11?,x11?)*FFLink(x3?,`i',x32?,x21?)*FFLink(`i',x4?,x13?,x43?) = -Replaced*FrozenFFLink(`i',x2,x21,x21)*FFLink(x3,`i',x32,x11)*FFLink(`i',x4,x13,x43); 
+    id FrozenFFLink(`i',x2?,x11?,x11?)*FFLink(x3?,`i',x32?,x21?)*FFLink(x4?,`i',x43?,x13?) = -Replaced*FrozenFFLink(`i',x2,x21,x21)*FFLink(x3,`i',x32,x11)*FFLink(x4,`i',x43,x13);
+
+    id FrozenFFLink(x2?,`i',x11?,x11?)*FFLink(`i',x3?,x12?,x32?)*FFLink(`i',x4?,x21?,x43?) = -Replaced*FrozenFFLink(x2,`i',x21,x21)*FFLink(`i',x3,x12,x32)*FFLink(`i',x4,x11,x43); 
+    id FrozenFFLink(x2?,`i',x11?,x11?)*FFLink(`i',x3?,x12?,x32?)*FFLink(x4?,`i',x43?,x21?) = -Replaced*FrozenFFLink(x2,`i',x21,x21)*FFLink(`i',x3,x12,x32)*FFLink(x4,`i',x43,x11);
+
+    id FrozenFFLink(x2?,`i',x11?,x11?)*FFLink(x3?,`i',x32?,x12?)*FFLink(`i',x4?,x21?,x43?) = -Replaced*FrozenFFLink(x2,`i',x21,x21)*FFLink(x3,`i',x32,x12)*FFLink(`i',x4,x11,x43); 
+    id FrozenFFLink(x2?,`i',x11?,x11?)*FFLink(x3?,`i',x32?,x12?)*FFLink(x4?,`i',x43?,x21?) = -Replaced*FrozenFFLink(x2,`i',x21,x21)*FFLink(x3,`i',x32,x12)*FFLink(x4,`i',x43,x11);
+
+    if(count(Replaced,1)) $Which = `i';
+    if(count(Replaced,1)) $BreakHere = 1;
+    .sort
+    #if (`$BreakHere'==1)
+        id Replaced = 1;
+        #breakdo
+    #endif
+    #enddo
+    #message >> Node `$Which' has been frozen
+                                                                                                                                                                  
+****
+****  Choice 1:
 ****
     
-    id once FrozenFFLink(x1?,x2?,?args1)*FFLink(x1?,x3?,x11?.x13?)*FFLink(x1?,x4?,?args3) = 
+    #message >> Submtting node `$Which' as written
+                                       
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x21?,x32?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x21,x32)*FrozenFFLink($Which,x4,x13,x43);
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x21?,x32?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x21,x32)*FrozenFFLink(x4,$Which,x43,x13);
+
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x21?)*FFLink($Which,x4?,x13?,x43?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x21)*FrozenFFLink($Which,x4,x13,x43);
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x21?)*FFLink(x4?,$Which,x43?,x13?) = (Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x21)*FrozenFFLink(x4,$Which,x43,x13);
+
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x21?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink($Which,x4,x21,x43);
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x21?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x12,x32)*FrozenFFLink(x4,$Which,x43,x21);
+
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x21?,x43?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink($Which,x4,x21,x43);
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x21?) = (Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x12)*FrozenFFLink(x4,$Which,x43,x21);
     
+    #call RecurseClassify(`$Which')
     
-    $Done=1;
+****
+****  Choice 2:
+****
+   
+    #message >> Swapping the endpoints of node `$Which'
+    
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
 
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
+    id FrozenFFLink($Which,x2?,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink($Which,x2,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
 
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink($Which,x4,x12,x43);
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink($Which,x3?,x12?,x32?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink($Which,x3,x13,x32)*FrozenFFLink(x4,$Which,x43,x12);
 
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink($Which,x4?,x13?,x43?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink($Which,x4,x12,x43);
+    id FrozenFFLink(x2?,$Which,x11?,x11?)*FFLink(x3?,$Which,x32?,x12?)*FFLink(x4?,$Which,x43?,x13?) = -(Left^-2)*FrozenFFLink(x2,$Which,x11,x11)*FrozenFFLink(x3,$Which,x32,x13)*FrozenFFLink(x4,$Which,x43,x12);
+    
+    #call RecurseClassify(`$Which')
+    
+    #message >> No more options for node `$Which', exiting this level
+    #message >> Submitting a swap of node `Last'
+    $Which = `Last';
+    .sort 
+    
 
 #enddo
     
