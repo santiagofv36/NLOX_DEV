@@ -1,8 +1,8 @@
 
 #procedure DefineTopologies
 
-CF FFLink;
-CF FNode;
+CF FFLink,TTLink,FTLink;
+CF FNode,TNode;
 auto s x,y;
 
 #endprocedure
@@ -12,8 +12,9 @@ auto s x,y;
 
 .sort 
 CF myep;
-#do i=1,10
+#do i=1,12
 id once cOlf(?args) = FNode(?args,`i');
+id once cOlT(?args) = TNode(?args,`i');
 #enddo;
 
 repeat;
@@ -33,9 +34,8 @@ id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x1?,x3?,x15?,x16?)
 id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x3?,x1?,x16?,x15?)*FFLink(x2?,x4?,x17?,x18?) = myep(x15,x13,x11)*myep(x17,x14,x12)*NC*FFLink(x3,x4,x16,x18);
 id FFLink(x1?,x2?,x11?,x12?)*FFLink(x1?,x2?,x13?,x14?)*FFLink(x3?,x1?,x16?,x15?)*FFLink(x4?,x2?,x18?,x17?) = myep(x15,x13,x11)*myep(x17,x14,x12)*NC*FFLink(x3,x4,x16,x18);
 
-
-#do i=1,10
-    #do j=`i'+1,10
+#do i=1,12
+    #do j=`i'+1,12
         id FFLink(`j',`i',x1?,x2?) = FFLink(`i',`j',x2,x1);
     #enddo
 #enddo
@@ -59,54 +59,42 @@ id FNode(cOla0,cOla0,cOla0,x1?) = 1;
 #procedure LexicographicalLabel
 
 .sort
-#do i=1,10
-    #do j=`i'+1,10
+#do i=1,12
+    #do j=`i'+1,12
         id FFLink(`i',`j',x1?,x2?) = FFLink(N`i'_?,N`j'_?,x1,x2);
     #enddo
 #enddo
+
         
-renumber 0;
+#do k=0,3
 
-#do i=1,10
-    #do j=`i'+1,10
-        id FFLink(N`j'_?,N`i'_?,x1?,x2?) = FFLink(N`i'_?,N`j'_?,x2,x1);
+    renumber 0;
+
+    #do i=1,12
+        #do j=`i'+1,12
+            id FFLink(N`j'_?,N`i'_?,x1?,x2?) = FFLink(N`i'_?,N`j'_?,x2,x1);
+        #enddo
     #enddo
-#enddo
 
-#do i=1,4
-argument;
-id N`i'_? = `i';
-endargument;
-#enddo
-
-renumber 0;
-
-#do i=1,10
-    #do j=`i'+1,10
-        id FFLink(N`j'_?,N`i'_?,x1?,x2?) = FFLink(N`i'_?,N`j'_?,x2,x1);
+    #do i=1,4
+        argument;
+        id N`i'_? = {`i'+4*`k'};
+        endargument;
     #enddo
+
 #enddo
-
-#do i=1,4
-argument;
-id N`i'_? = {`i'+4};
-endargument;
-#enddo
-
-
-
-
-
 
 #endprocedure
+
+
         
 #procedure CannonicalOrientation
 
 .sort
 CF myep;
-#do i=1,10
-    #do j=`i'+1,10
-        #do k=`j'+1,10
+#do i=1,12
+    #do j=`i'+1,12
+        #do k=`j'+1,12
             
             id FFLink(x1?,`i',x11?!{x0},x21?)*FFLink(x1?,`j',x12?!{x0},x32?)*FFLink(x1?,`k',x13?!{x0},x43?) = myep(x11,x12,x13)*FFLink(x1,`i',x0,x21)*FFLink(x1,`j',x0,x32)*FFLink(x1,`k',x0,x43);
             id FFLink(x1?,`i',x11?!{x0},x21?)*FFLink(x1?,`j',x12?!{x0},x32?)*FFLink(`k',x1?,x43?,x13?!{x0}) = myep(x11,x12,x13)*FFLink(x1,`i',x0,x21)*FFLink(x1,`j',x0,x32)*FFLink(`k',x1,x43,x0);
