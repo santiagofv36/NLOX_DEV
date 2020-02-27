@@ -27,7 +27,7 @@ def splitExpressions(filename):
         lines = []
         exprline = ""
         for line in file:
-            if "FORM" in line  or "#-" in line  or "~"  in line:
+            if "FORM" in line  or "#" in line  or "~"  in line or "off statistics" in line:
                 continue
             exprline += line.strip(' ')
             if ";" in line:
@@ -37,7 +37,7 @@ def splitExpressions(filename):
     expressions = []
     for line in lines:
         expr = line.split('=')
-        expr[0] = expr[0].replace('\n','').replace("\\", '')
+        expr[0] = expr[0].replace('\n','').replace("\\", '').replace('l ','')
         subexpr = expr[1].split('\n\n')
         bres = []
         for sexpr in subexpr:

@@ -19,7 +19,7 @@ def UniqueChains(seq):
 def UniqueChainsReplaced(RawFile):
     
     aTools.runForm(RawFile,'PreProcColor.out',False,'form')
-    OriginalExpressions = aTools.splitExpressions('ColorProducts.Parse.out')
+    OriginalExpressions = aTools.splitExpressions(RawFile)
     
     UniqueChainsFile = "UniqueChains.frm"
     UCF = open(UniqueChainsFile,"w")
@@ -67,7 +67,8 @@ def UniqueChainsReplaced(RawFile):
         if (len(NewChain)):
             ChainCount +=1
             res = next((sub for sub in OriginalExpressions if sub['name'] == Term['name']), None)
-            UCFLine = 'l [UC('+str(ChainCount)+')] = ('+res['value'][0][0]+')/('+InvPrefactor+');\n'
+            UCFLine  = 'l [UC('+str(ChainCount)+')] = ('+res['value'][0][0]+')/('+InvPrefactor+');\n'
+            UCFLine += '*l [UC('+str(ChainCount)+')] = '+NewChain+';\n\n'
             UCF.write(UCFLine)
             seen[NewChain] = 'UC('+str(ChainCount)+')'
             
@@ -83,23 +84,8 @@ def UniqueChainsReplaced(RawFile):
     UCRFLine = '#call NLOXSimplifyColorPrintEnd\n'
     UCRF.write(UCRFLine)
     
-    
     UCFLine = ''
-    UCFLine += '*#call ChainToTF\n'
-    UCFLine += '*.sort             \n'
     UCFLine += '#call NLOXSimplifyColorTranslateIndices \n'
-    UCFLine += 'argument;                     \n'
-    UCFLine += 'id cOli1e = cOlaie1;          \n'
-    UCFLine += 'id cOlj1e = cOlaje1;          \n'
-    UCFLine += 'id cOli2e = cOlaie2;          \n'
-    UCFLine += 'id cOlj2e = cOlaje2;          \n'
-    UCFLine += 'id cOli3e = cOlaie3;          \n'
-    UCFLine += 'id cOlj3e = cOlaje3;          \n'
-    UCFLine += 'id cOli4e = cOlaie4;          \n'
-    UCFLine += 'id cOlj4e = cOlaje4;          \n'
-    UCFLine += 'id cOli5e = cOlaie5;          \n'
-    UCFLine += 'id cOlj5e = cOlaje5;          \n'
-    UCFLine += 'endargument;                  \n'
     UCFLine += '#call NLOXSimplifyColorFooter \n'
     UCFLine += '#call NLOXSimplifyColorPrintEnd\n'
     UCF.write(UCFLine)
