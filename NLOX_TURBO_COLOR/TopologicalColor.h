@@ -73,11 +73,29 @@ renumber 0;
     #enddo
 #enddo
 
-#do i=1,10
+#do i=1,4
 argument;
 id N`i'_? = `i';
 endargument;
 #enddo
+
+renumber 0;
+
+#do i=1,10
+    #do j=`i'+1,10
+        id FFLink(N`j'_?,N`i'_?,x1?,x2?) = FFLink(N`i'_?,N`j'_?,x2,x1);
+    #enddo
+#enddo
+
+#do i=1,4
+argument;
+id N`i'_? = {`i'+4};
+endargument;
+#enddo
+
+
+
+
 
 
 #endprocedure
