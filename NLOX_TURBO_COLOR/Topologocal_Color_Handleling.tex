@@ -24,10 +24,11 @@
 
 \def \Int#1{\int d#1 \hskip0.1cm}
 
-\def \FNode{ \texttt{FNode} }
-\def \FNodes{ \texttt{FNodes} }
-\def \FLink{ \texttt{FLink} }
-\def \FLinks{ \texttt{FLinks} }
+\def \FNode{\texttt{FNode} }
+\def \FNodes{\texttt{FNodes} }
+\def \FFLink{\texttt{FFLink} }
+\def \FFLinks{\texttt{FFLinks} }
+\def \NLOX{\texttt{NLOX} }
 
 
 \title{Color Handling @\texttt{NLOX}}
@@ -37,7 +38,8 @@
 \maketitle
 \section{Topological Color}
 In this section we will discuss the method by which \texttt{NLOX} handles color matrices to reduce the number 
-of evaluations of color traces. The general scheme is to recursively apply the following set of identities:
+of evaluations of color traces. The general scheme is to recursively apply the following set of identities for 
+$SU(N)$:
 
 \begin{itemize}
  \item $f^{a_1a_2a_3} = -2i(Tr(T^{a_1} T^{a_2} T^{a_3})-Tr(T^{a_1} T^{a_3} T^{a_2}))$
@@ -45,44 +47,105 @@ of evaluations of color traces. The general scheme is to recursively apply the f
  \item $Tr(T^a) = 0$
  \item $Tr(T^{a_1}T^{a_2})=\frac{1}{2}\delta^{a_1 a_2}$
 \end{itemize}
-
-This will fully simplify any sequence of $f$ tensors and $T$ matrices down to (possibly) traces of $T$ matrices.
-For fully contracted sequences the result will be a number. 
+This will fully simplify any sequence of $f$ and $T$ tensors down to (possibly) traces of $T$ matrices.
+If the gauge group is different from $SU(N)$ there is no analougue for the second identity and one 
+must use other methods, this is for example what happens for $SO(3,1)$ and prevents us from 
+quickly evaluationg traces of $\gamma$ matrices. What follows is independent on the form of the previous 
+identites and we only show their form for $SU(N)$ for completeness.
 
 \subsection{On the redundancy of the $f-T$ representation}
-Let's consider the example of sequences of $8$ fully contracted $f$ tensors, there are in principle $12!$ such sequences one might encounter, however if we make full use of the anti-symmetry of the $f$ tensors it turns out there are only $12$ independent structures. To understand how can we identify such independant structures we have to change perspective, we identify every $f$ tnesor with an \texttt{FNode} which can connect to $3$ other \texttt{FNodes}.
+If one considers the interference of large numbers of Feynman diagrams containig $f$ and $T$ tensors there 
+could be lots of seemingly different combiantions of these tensors that, as it turns out, can be maped into 
+a far smaller subset of generating sequences. For example, there are $12!$ sequences of $8$ fully contracted $f$ tensors, however, if we make full use of the anti-symmetry of the $f$ tensors it turns out there are only $8$ independent sqeunces.
+\\ 
+
+To understand how can we identify such independent sequences we have to change perspective, we identify every $f$ tnesor with an \texttt{FNode} which can connect to $3$ other \texttt{FNodes}.
 Two \texttt{FNodes} are connected if they share an index. In our example of $8$ fully contracted $f$ tensors 
-every node is connected to $3$ other \texttt{FNodes}.
-To further simplify the \texttt{FNode} expressions we make use of the identities:
+every node is connected to $3$ other \texttt{FNodes}.\\
+
+But, why does this help?, let's assume a simpler scenario, that the $f$ tensors are symmetric rather than anti-symmetric. If so we could simply identify every graph were the same \FNodes share a contracted index
+regardless on the position of such indices in each \FNode. Because the $f$ tensors are anti-symmetric 
+we have to have a consistent way of keeping track of the sign difference that may arise between 
+different equivalent sequences due to index transposition.\\
+
+To further aid in the simplification we make use of the identities:
 \begin{itemize}
  \item $f^{a_1 a_2 a_3} f^{a_1a_2a_4} = C_A \delta^{a_3a_4}$
  \item $f^{a_1 a_2 a_3} f^{a_1a_2a_3} = N_A C_A $
 \end{itemize}
-what this does is it makes sure that there are either $0$ or $1$ links between any two \texttt{FNodes}.
-We are ready to introduce the concept of a \texttt{FFLink}, if two \texttt{FNodes} share an index on the 
-same position we say they form a \texttt{FFLink}, is they share an index but they are not in the same position
-we use the anti-symmetry of the $f$ to move one of them so it coincides with the other $f$, and pay the appropiate
-sign if necessary. Let's work out a simple example, consider:
+effectively what this does is to ensure that there are either $0$ or $1$ links between any two \texttt{FNodes}.\\
 
-\begin{equation}
+\noindent To achieve the full classification we need to:
+
+\begin{itemize}
+ \item Label all $f$ tensors as \FNodes in a topologiacally invariant way.
+ \item Build a consistent rule for identifying a common index with a \FFLink between two \FNodes.
+\end{itemize}
+the first is by far the hardest and in general very expensive computationally, since the goal is to reduce computational expense we might have to settle for a procedurally generated identification rule that is not complete, but is cheap computationally.
+The second point we need to have fully under control, we should point out that it is desirable 
+to have a local procedure, meaning that the orientation defined as positive can be defined per \FNode
+without having to look further than nearest neighboors. In contast global orientation tend to be expensive 
+to decide and again defeat the purpose of reducing computational expense.\\
+
+\subsection{Procedures @\NLOX}
+The labelling used inside \NLOX is built to be very light, but still reduce the number of expressions 
+to be evaluated significantly, we randomly pick a \FNode and label it as $\#1$,
+then all the nodes connected to it are defined to be $\#2$, $\#3$, and $\#4$, there is a choice here which 
+again we randomly make, we continue by moving on to \FNode $\#2$ and do the same, defining any undefined 
+\FNode as the next label available. We then check all the pair-wise name transpositions to see if 
+there is a choice which makes the sum of differences between linked \FNodes labels smaller. 
+This will label some of the \FNodes which form triangles in consecutive order.\\
+
+Now that we have a proper labeling on the \FNodes we can define a local orientation of each \FNode,
+we define a the positive value of the orientation of \FNode as one that assings the connections 
+in ascending order of the labels of the connected \FNodes. Let's work out an example, consider the sequence:
+
+\begin{equation*}
 \begin{aligned}
  f^{a_1a_2a_3}f^{a_4a_5a_6}f^{a_7a_8a_9}f^{a_1a_4a_7}f^{a_2a_5a_8}f^{a_3a_6a_9}
  \rightarrow
  &\texttt{FNode}(a_1,a_2,a_3;1)\texttt{FNode}(a_4,a_5,a_6;5)\texttt{FNode}(a_7,a_8,a_9;6)\\
  &\texttt{FNode}(a_1,a_4,a_7;2)\texttt{FNode}(a_2,a_5,a_8;3)\texttt{FNode}(a_3,a_6,a_9;4)\\
- \rightarrow
- &\texttt{FFLink}(1,2)\texttt{FFLink}(1,3)\texttt{FFLink}(1,4)\\
- &\texttt{FFLink}(5,2)\texttt{FFLink}(5,3)\texttt{FFLink}(5,4)\\
- &\texttt{FFLink}(6,2)\texttt{FFLink}(6,3)\texttt{FFLink}(6,4)\\
  \end{aligned}
-\end{equation}
-the \texttt{FNode} numbering is arbitrary and hence we have the freedom to choose, however, 
-since we want to classify the different sequences of $f$, it is desirable to have a cannonical 
-naming scheme in which the equivalence between sequences is manifest. For example one might pick a 
-\texttt{FNode} and call it $\#1$, then it is natural to define the \texttt{FNodes} $\#2$, $\#3$ and $\#4$ as simpliy those connected to $\#1$, we know they are all different since any \texttt{FNode} has only 
-one connection with any other. This is as far as general structures go, but we can continue labeling our 
-graph using lexicographical ordering and this procedure fully idntifies equivalent structures under full
-anti-symmetry of the $f$ tensor. 
+\end{equation*}
+following our labeling rules. Next we translate to labeled \FFLinks:
+
+\begin{equation*}
+\begin{aligned}
+ \texttt{FNode}(a_1,a_2,a_3;1)\texttt{FNode}(a_4,a_5,a_6;5)\texttt{FNode}(a_7,a_8,a_9;6)
+ &\rightarrow&
+ \FFLink(1,2|1,1)\FFLink(1,3|2,1)\FFLink(1,4|3,1)\\
+ \texttt{FNode}(a_1,a_4,a_7;2)\texttt{FNode}(a_2,a_5,a_8;3)\texttt{FNode}(a_3,a_6,a_9;4)
+ &&\FFLink(2,5|2,1)\FFLink(2,6|3,1)\FFLink(3,5|2,2)\\
+ &&\FFLink(3,6|3,2)\FFLink(4,5|3,3)\FFLink(4,6|3,3)\\
+ \end{aligned}
+\end{equation*}
+the first two arguments of the \FFLink are the \FNodes it connects and the second two refer to which 
+index of each participates in the \FFLink. Since we defined the positive orientation of the \FNode 
+as the one that assigns the indices in order of labels we need to go into every \FNode and permute the 
+indices until this is the case, and pay appropiate sign, once the \FNodes are well oriented we drop the 
+secondary labels:
+
+\begin{equation*}
+\begin{aligned}
+ \FFLink(1,2|1,1)\FFLink(1,3|2,1)\FFLink(1,4|3,1)
+ &\rightarrow&
+ \epsilon(1,2,3)\epsilon(1,2,3)\FFLink(1,2)\FFLink(1,3)\FFLink(1,4)\\
+ \FFLink(2,5|2,1)\FFLink(2,6|3,1)\FFLink(3,5|2,2)
+ &&
+ \epsilon(1,2,3)\epsilon(1,2,3)\FFLink(2,5)\FFLink(2,6)\FFLink(3,5)\\
+ \FFLink(3,6|3,2)\FFLink(4,5|3,3)\FFLink(4,6|3,3)
+ &&
+ \epsilon(1,2,3)\epsilon(1,2,3)\FFLink(3,6)\FFLink(4,5)\FFLink(4,6)\\
+ \end{aligned}
+\end{equation*}
+each $\epsilon$ tensor comes from the reorientation of each \FNode to reference it 
+against the positive orientation. Another definition we need to 
+provide is which is the positive orientation of two \FNodes  are connceted multiple times, if
+two connections are shared we choose 
+the orientation to be positive if the outer two connections are the last connections for both 
+\FNodes. If two \FNodes are fully connected the positive orientaton is defined as the orientation were all connections match possition between the two \FNodes.\\
+
 
 \subsection{Colored Graphs}
 A better way for understanding what the \texttt{FNodes} and \texttt{FFLinks} are refering to is to 
@@ -324,58 +387,7 @@ while for $8$ \FNodes we 3 planar structures:
   \tikzstyle{every state}=[fill=red,draw=red,minimum size=3mm]
   \tikzstyle{equation} = [
     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-  \node[] at (0,0) [] {};
-  \node[state] (1) at (1,0) [] {};
-  \node[state] (2) at (0.3090,0.9510) [] {};
-  \node[state] (3) at (-0.809017, 0.587785) [] {};
-  \node[state] (4) at (-0.809017, -0.587785) [] {};
-  \node[state] (5) at (0.3090,-0.9510) [] {};
-  \node[state] (6) [right of=1] {};
-  \node[state] (7) [above right of=2] {};
-  \node[state] (8) [below right of=5] {};
   
-  \draw[red] 
-        (1) edge  node {} (2)
-        (2) edge  node {} (3)
-        (3) edge  node {} (4)
-        (4) edge  node {} (5)
-        (5) edge  node {} (1)
-        (1) edge  node {} (6)
-        (2) edge  node {} (7)
-        (5) edge  node {} (8)
-        (6) edge  node {} (7)
-        (6) edge  node {} (8)
-        (7) edge  node {} (3)
-        (8) edge  node {} (4);
-  
-  
-  \tikzset{shift={(6.6,0)}}
-  \node[]      (10) at (0,0) [] {};
-  \node[state] (11) at (1,0) [] {};
-  \node[state] (12) at (0.5,0.866025) [] {};
-  \node[state] (13) at (-0.5,0.866025) [] {};
-  \node[state] (14) at (-1,0) [] {};
-  \node[state] (15) at (-0.5,-0.866025)  [] {};
-  \node[state] (16) at (0.5,-0.866025) [] {};
-  \node[state] (17) [right of=11] {};
-  \node[state] (18) [left of=14] {};
-  
-  \draw[red] 
-        (11) edge  node {} (12)
-        (12) edge  node {} (13)
-        (13) edge  node {} (14)
-        (14) edge  node {} (15)
-        (15) edge  node {} (16)
-        (16) edge  node {} (11)
-        (17) edge  node {} (11)
-        (17) edge  node {} (16)
-        (17) edge  node {} (12)
-        (18) edge  node {} (14)
-        (18) edge  node {} (15)
-        (18) edge  node {} (13);
-  
-  \tikzset{shift={(5,0)}}
-
   \node[]      (20) at (0,0) [] {};
   \node[state] (21) at ( 0.6, 0.6) [] {};
   \node[state] (22) at (-0.6, 0.6) [] {};
@@ -399,6 +411,58 @@ while for $8$ \FNodes we 3 planar structures:
         (22) edge  node {} (26)
         (23) edge  node {} (27)
         (24) edge  node {} (28);
+  
+  \tikzset{shift={(3.5,0)}}
+  
+  \node[] at (0,0) [] {};
+  \node[state] (1) at (1,0) [] {};
+  \node[state] (2) at (0.3090,0.9510) [] {};
+  \node[state] (3) at (-0.809017, 0.587785) [] {};
+  \node[state] (4) at (-0.809017, -0.587785) [] {};
+  \node[state] (5) at (0.3090,-0.9510) [] {};
+  \node[state] (6) at (2,0) {};
+  \node[state] (7) [above right of=3] {};
+  \node[state] (8) [below right of=4] {};
+  
+  \draw[red] 
+        (1) edge  node {} (2)
+        (2) edge  node {} (3)
+        (3) edge  node {} (4)
+        (4) edge  node {} (5)
+        (5) edge  node {} (1)
+        (1) edge  node {} (6)
+        (2) edge  node {} (7)
+        (5) edge  node {} (8)
+        (6) edge  node {} (7)
+        (6) edge  node {} (8)
+        (7) edge  node {} (3)
+        (8) edge  node {} (4);
+  
+  
+  \tikzset{shift={(5.5,0)}}
+  \node[]      (10) at (0,0) [] {};
+  \node[state] (11) at (1,0) [] {};
+  \node[state] (12) at (0.5,0.866025) [] {};
+  \node[state] (13) at (-0.5,0.866025) [] {};
+  \node[state] (14) at (-1,0) [] {};
+  \node[state] (15) at (-0.5,-0.866025)  [] {};
+  \node[state] (16) at (0.5,-0.866025) [] {};
+  \node[state] (17) at (2,0) {};
+  \node[state] (18) at (-2,0) {};
+  
+  \draw[red] 
+        (11) edge  node {} (12)
+        (12) edge  node {} (13)
+        (13) edge  node {} (14)
+        (14) edge  node {} (15)
+        (15) edge  node {} (16)
+        (16) edge  node {} (11)
+        (17) edge  node {} (11)
+        (17) edge  node {} (16)
+        (17) edge  node {} (12)
+        (18) edge  node {} (14)
+        (18) edge  node {} (15)
+        (18) edge  node {} (13);
   
   
   \end{tikzpicture}  

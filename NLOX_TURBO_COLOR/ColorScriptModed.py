@@ -48,7 +48,7 @@ def UniqueChainsReplaced(RawFile):
         Prefactor = ''
         record = 0
         for i in Chain:
-            if i == 'F': 
+            if i == 'F' or 'T': 
                 record = 1
             if(record==1): 
                 NewChain += i
@@ -76,7 +76,8 @@ def UniqueChainsReplaced(RawFile):
             #UCRF.write(UCRFLine)
         #UCRF.write(';\n')
         UCRFBody += ';\n'
-        
+    
+    print "Color preprocessing has reduced from",len(Expressions),"color expressions to",len(seen)    
     UCRFHeader  += 'Table, sparse, UC(1);\n'
     UCRFHeader  += '#include FillUniqueChains.id\n'
     UCRF.write(UCRFHeader)
