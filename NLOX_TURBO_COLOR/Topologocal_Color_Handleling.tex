@@ -29,7 +29,7 @@
 \def \FFLink{\texttt{FFLink} }
 \def \FFLinks{\texttt{FFLinks} }
 \def \NLOX{\texttt{NLOX} }
-
+\def \Placeholder{ \textbf{Placeholder }}
 
 \title{Color Handling @\texttt{NLOX}}
 \author{Diógenes Figueroa}
@@ -50,13 +50,13 @@ $SU(N)$:
 This will fully simplify any sequence of $f$ and $T$ tensors down to (possibly) traces of $T$ matrices.
 If the gauge group is different from $SU(N)$ there is no analougue for the second identity and one 
 must use other methods, this is for example what happens for $SO(3,1)$ and prevents us from 
-quickly evaluationg traces of $\gamma$ matrices. What follows is independent on the form of the previous 
+quickly evaluating traces of $\gamma$ matrices. What follows is independent on the form of the previous 
 identites and we only show their form for $SU(N)$ for completeness.
 
 \subsection{On the redundancy of the $f-T$ representation}
 If one considers the interference of large numbers of Feynman diagrams containig $f$ and $T$ tensors there 
 could be lots of seemingly different combiantions of these tensors that, as it turns out, can be maped into 
-a far smaller subset of generating sequences. For example, there are $12!$ sequences of $8$ fully contracted $f$ tensors, however, if we make full use of the anti-symmetry of the $f$ tensors it turns out there are only $8$ independent sqeunces.
+a far smaller subset of generating sequences. For example, there are $12!$ sequences of $8$ fully contracted $f$ tensors, however, if we make full use of the anti-symmetry of the $f$ tensors it turns out there are only $8$ independent squences.
 \\ 
 
 To understand how can we identify such independent sequences we have to change perspective, we identify every $f$ tnesor with an \texttt{FNode} which can connect to $3$ other \texttt{FNodes}.
@@ -84,7 +84,7 @@ effectively what this does is to ensure that there are either $0$ or $1$ links b
 the first is by far the hardest and in general very expensive computationally, since the goal is to reduce computational expense we might have to settle for a procedurally generated identification rule that is not complete, but is cheap computationally.
 The second point we need to have fully under control, we should point out that it is desirable 
 to have a local procedure, meaning that the orientation defined as positive can be defined per \FNode
-without having to look further than nearest neighboors. In contast global orientation tend to be expensive 
+without having to look further than nearest neighboors. In contast, global orientations tend to be expensive 
 to decide and again defeat the purpose of reducing computational expense.\\
 
 \subsection{Procedures @\NLOX}
@@ -467,6 +467,125 @@ while for $8$ \FNodes we 3 planar structures:
   
   \end{tikzpicture}  
 \end{center}
+
+
+\section{Color Correlations}
+Color correlated matrix elements are available in \NLOX as of ver \Placeholder.
+The generation of color-correlated matrix elements is \texttt{off} per default, 
+it can be activated via the input file by setting:\\
+
+  \texttt{generateColorCorrelations = true}\\
+
+For evaluation, there exists a One-Loop-Provider level function thal calls for their evaluation:\\
+
+  \texttt{NLOX\_OLP\_EvalSubProcess\_CC(isub,type,cp,pp,next,mu,borncc,acc)}\\
+  
+  
+\noindent which can only be called for Born matrix elements. 
+The return pointer \texttt{borncc} must have a length of $1+\frac{n(n-1)}{2}$ where \texttt{NLOX} will store 
+the uncorrelated born as well as all the pairwise color-correlated matrix elements in lexicographical order on the labels of the external particles, the first entry is reserved for the uncorrelated Born.\\
+
+The implementation on the \texttt{FORM} code is done in \texttt{redefineFields.prc}, at this stage 
+we replace the usual color contraction tensor that communicates the tree with the tree*, if no 
+color-correlations are computed the tensor would be:
+
+\begin{equation}
+ (\mathcal{M}_0)^*(\tilde{\mathcal{M}_0}) = 
+ \mathcal{M}_0^{c_1,...,c_n}\delta_{c_1d_1}\dots\delta_{d_1d_n}\tilde{\mathcal{M}}_0^{*d_1,...,d_n} 
+ = \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>
+\end{equation}
+where the $c$'s and $d$'s denote either fundamental or adjoint indices depending on the nature 
+of the particle. We replace every intermediate tensor by:
+
+\begin{equation}
+ \delta_{c_id_i}\rightarrow \left(\text{ccL}_0\delta_{c_id_i}+ \text{ccLP }\text{ccL}_i (\textbf{T}^a)_{c_id_i}\right),
+\end{equation}
+the generator $\textbf{T}^a$ has different values depending on the nature of the particle:
+
+  \[ 
+  (\textbf{T}^a)_{c_id_i} =
+  \begin{cases} 
+      -(T^a)_{c_id_i} & \text{for initial quarks and final anti-quarks} \\
+      (T^a)_{d_ic_i} & \text{for initial anti-quarks and final quarks} \\
+      if^{c_id_ia} & \text{for gluons} 
+   \end{cases}
+  \]
+To produce just the required correlations we throw away any term that does not have $0$ or
+$2$ powers of ccLP, we also identify $\text{ccL}_0^2\rightarrow \text{ccL}_0$, $\text{ccLP}\rightarrow 1$ and 
+$\text{ccL}_0\text{ ccL}_i\rightarrow \text{ccL}_i$, the final result for the color-correlated amplitude inside \NLOX is:
+
+\begin{equation}
+  \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>_{CC} = 
+ \text{ccL}_0 \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right> +  
+ \sum_{i \neq j} \text{ccL}_i\text{ ccL}_j \Big<\mathcal{M}_0\Big|\textbf{T}_i\textbf{T}_j\left|\mathcal{\tilde M}_0\right>.
+\end{equation}
+
+\section{QCD and EW Real IR Poles}
+\subsection{Implementation @NLOX}
+
+Real IR-Pole routines are implemented within \NLOX, they are used 
+for comparing them with the IR behaviour of the generated virtual 
+amplitude and provide a stability check of the tensor reduction algorithm. 
+The routines that use this IR pole stability checks are available at the 
+One-Loop-Provider level via the function:\\
+
+\texttt{NLOX\_OLP\_EvalSubProcess\_Alpha(isub,i,type,cp,pp,next,mu,rval2,acc)}\\
+
+This function takes the same arguments as its non-Alpha counterpart except for the coupling-power
+combination specification \texttt{cp} which is now expected to be in the format \texttt{cp = asXaeY},
+where $X$ is the desired combined power of $\alpha_s$ and $Y$ is the desired combined power of $\alpha_e$.\\
+
+The result of the Real-IR pole is computed alongside the Virtual-IR pole coming from the tensor reduction
+procedure, as the LN Theorem states these two must cancel against each other to provide a finite 
+final result. This fact can be used to provide a check on the stability of the tensor reduction 
+algorithm since large differences point to numerical instabilities of the tensor reduction 
+procedure. There is a user-accesible parameter \texttt{IR\_THRESHOLD} that sets the level 
+of agreement required between the two IR-Poles for the phase-space-point to be considered safe,
+the dafault behaviour is that \NLOX deems a phase-space-point unstable if less than \Placeholder significant
+digits agree between the two IR-Poles. \\
+
+\subsection{Master Formula}
+To calculate the Real-IR Pole \NLOX uses a dipole subtraction inspired formula, essentially we 
+compute the endpoint contribution of both the QCD and EW Dipoles applied to a particular LO 
+interference, in what follows we will only consider processes that are not loop induced meaning 
+that the leading order matrix elements are just a sum of tree level amplitudes:
+
+\begin{equation}
+ \mathcal{M}_{0}(\Phi_n) = \sum_{i,j}e^i g^j {\hat{\mathcal{M}}(\Phi_n)}^{i,j}_{0,0}
+\end{equation}
+and the differential cross section is a convolution of tree matrix elements:
+
+\begin{equation}
+ \int d\sigma_{LO} = \int d\Phi_{n}
+ \sum_{a,b} g^{2a} e^{2b} 
+ \sum_{i,j}\left({\hat{\mathcal{M}}(\Phi_n)}^{i,j}_{0,0}\right)^{*}{\hat{\mathcal{M}}(\Phi_n)}^{a-i,b-j}_{0,0}
+\end{equation}
+where as to go one power in both $\alpha_s$ and $\alpha_e$ we must consider the 1-loop
+matrix elements as well as trees with one extra external particle:
+
+\begin{equation}
+ \int d\sigma^V_{NLO} = 
+ \int d\Phi_{n}\sum_{a,b}
+ g^a e^b 
+ \sum_{i,j}\left(g^2{\hat{\mathcal{M}}(\Phi_n)}^{i,j}_{1,0}
+ +e^2{\hat{\mathcal{M}}(\Phi_n)}^{i,j}_{0,1}\right)
+ \left({\hat{\mathcal{M}}(\Phi_n)}^{a-i,b-j}_{0,0}\right)^{*}
+\end{equation}
+the IR divergent part of the Real emission matrix element can be extracted analitycally in 
+dimensional regularization using a dipole subtraction scheme, in it the poles are contained 
+in the endpoint contributions of the QCD and EW dipoles:
+
+\begin{equation}
+ \int d\sigma^E_{NLO} = \int d\Phi_{n}
+ \sum_{a,b} g^{a} e^{b} 
+ \sum_{i,j}
+ \left<{\hat{\mathcal{M}}(\Phi_n)}^{i,j}_{0,0}\right|
+ \left(\frac{\alpha_s}{2\pi}\right)\textbf{G}_{QCD}(\Phi_n)
+ +
+ \left(\frac{\alpha_e}{2\pi}\right)\textbf{G}_{EW}(\Phi_n)
+ \left|{\hat{\mathcal{M}}(\Phi_n)}^{a-i,b-j}_{0,0}\right>
+\end{equation}
+
 
 
 
