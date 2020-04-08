@@ -609,14 +609,12 @@ matrix elements as well as trees with one extra external particle:
  \int d\Phi_{n}\sum_{a,b}
  g^a e^b 
  \sum_{i,j}
- 2\text{Re}\left[
+ 2\text{Re}\left(
  \MBra{0}{i}{j}
- \left(
-  g^2\MKet{1}{a+2-i}{b-j}
- +
- e^2\MKet{1}{a-i}{b+2-j}
+%  \left(
+  \MKet{1}{a-i}{b-j}
+%  \right)
  \right)
- \right]
 \end{equation}
 the IR divergent part of the Real emission matrix element can be extracted analitycally in 
 dimensional regularization using a dipole subtraction scheme, in it the poles are contained 
@@ -780,53 +778,99 @@ is given by the sum of endpoint contributions:
 \end{equation}
 meaning that the squared amplitude built by using the sum on the RHS yields the opposite IR poles as the 
 one built using the LHS as shown in tables \ref{virt_uubar} \ref{1loop_disentangled}. 
-To prove that this holds true in general we have to evaluate \eqref{cancellation} order by order in 
-perturbation theory, the result for the virtuals is:
+We just need to change variables on the endpoint contribution convolution:
 
 \begin{equation}
- \int d\sigma^V_{NLO} = 
- \int d\Phi_{n}\sum_{a,b}
- g^a e^b 
+ \int d\sigma^E_{NLO} = \int d\Phi_{n}
+ \sum_{a,b} g^{a} e^{b} 
  \sum_{i,j}
- 2\text{Re}\left[
- \left(
-  g^2\MBra{}{}{}
- +e^2\MBra{}{}{}
- \right)
- \left|{\hat{\mathcal{M}}}^{a-i,b-j}_{0}\right>
+ \text{Re}\left(
+ \MBra{0}{i}{j}
+ \left[
+ \textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
+ +
+ \textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
  \right]
-\end{equation}
-
-
-
-\begin{equation}
- \MKet{1}{X_0+2}{Y_0} \rightarrow -\frac{1}{2}
- \left(
- \textbf{G}_{QCD}\MKet{0}{X_0}{Y_0} 
- + 
- \textbf{G}_{EWK}\cancelto{0}{\MKet{0}{X_0+2}{Y_0-2}}
- \right),
- \label{boundary}
-\end{equation}
-since the second term vanishes, this statement is identical to \eqref{cancellation} when evaluated at the maximum power of $g$. Now we proceed to prove \eqref{Theo} by induction, we assume that for every $n<m-1$ the statement:
-\begin{equation}
-  \MKet{1}{X_0-2(n-1)}{Y_0+2n}\rightarrow -\frac{1}{2}
-  \left(
-  \textbf{G}_{QCD}\MKet{0}{X_0-2n}{Y_0+2n} 
- + 
- \textbf{G}_{EWK}\MKet{0}{X_0-2(n-1)}{Y_0+2(n-1)}
  \right)
 \end{equation}
-holds and use \eqref{cancellation} to prove that it must hold for $n=m$. Using \eqref{cancellation} at fixed 
-order of $g^{2X_0+2(m-1)}e^{2Y_0+2m}$ we have:
+where we are now summing two extra zeroes at the upper limits of both inner sums to cast it in the same 
+way as the 1-loop amplitude. Witout loss of generality we take the real part of each term, 
+because if the amplitudes in a term are different then there will be another term in the sum with the roles of the amplitudes reversed and thus the value of such term is the complex conjugate of the value of the term in question, thus the imaginary parts cancel. 
+If both amplitudes in a term are the same there is only one contribution of this 
+kind, but since the gauge group is $SU(3)$ and the operators $\textbf{G}$ are built from its 
+generators then it follows that the $\textbf{G}$ operators have real eigenvalues.\\
+
+Using eq.~\eqref{cancellation} we conclude that:
 
 \begin{equation}
- \Int{\Phi_n} \sum_{i,j}2\text{Re}\left[\right]\MKet{0}{2X_0-2(m-1)-i}{2Y_0+2m-j}
+ \sum_{ij}2\text{Re}
+ \left(
+ \MBra{0}{i}{j}
+ \left[
+ \MKet{1}{a-i}{b-j}
+ +
+ \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
+ +
+ \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
+ \right]
+ \right)=0 \hskip0.3cm \forall a,b
+\end{equation}
+to arrive to the conclusion in eq.\eqref{Theo} one must just note that this is true for the extreme cases 
+where either $a$ or $b$ have their minimum value, let's call $a_0$ and $b_0$ the minimum values of $a$ and $b$
+respectively, then the previous sum reduces to:
+
+\begin{equation}
+ \MBra{0}{i}{j}
+ \left[
+ \MKet{1}{a_0-i}{b-j}
+ +
+ \cancelto{0}{\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_0-2-i}{b-j}}
+ +
+ \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_0-i}{b-2-j}
+ \right]=0
 \end{equation}
 
+\begin{equation}
+ \MBra{0}{i}{j}
+ \left[
+ \MKet{1}{a-i}{b_0-j}
+ +
+ \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_0-2-i}{b_0-j}
+ +
+ \cancelto{0}{\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_0-i}{b_0-2-j}}
+ \right]=0
+\end{equation}
+and we can prove using induction that this is true for all other orders, since the consecutive terms (in the sense of increasing value of $a$ or $b$) only contain one extra 1-loop amplitude that we need to solve for.
+
+
+% \begin{equation}
+%  \MKet{1}{X_0+2}{Y_0} \rightarrow -\frac{1}{2}
+%  \left(
+%  \textbf{G}_{QCD}\MKet{0}{X_0}{Y_0} 
+%  + 
+%  \textbf{G}_{EWK}\cancelto{0}{\MKet{0}{X_0+2}{Y_0-2}}
+%  \right),
+%  \label{boundary}
+% \end{equation}
+% since the second term vanishes, this statement is identical to \eqref{cancellation} when evaluated at the maximum power of $g$. Now we proceed to prove \eqref{Theo} by induction, we assume that for every $n<m-1$ the statement:
+% \begin{equation}
+%   \MKet{1}{X_0-2(n-1)}{Y_0+2n}\rightarrow -\frac{1}{2}
+%   \left(
+%   \textbf{G}_{QCD}\MKet{0}{X_0-2n}{Y_0+2n} 
+%  + 
+%  \textbf{G}_{EWK}\MKet{0}{X_0-2(n-1)}{Y_0+2(n-1)}
+%  \right)
+% \end{equation}
+% holds and use \eqref{cancellation} to prove that it must hold for $n=m$. Using \eqref{cancellation} at fixed 
+% order of $g^{2X_0+2(m-1)}e^{2Y_0+2m}$ we have:
+% 
+% \begin{equation}
+%  \Int{\Phi_n} \sum_{i,j}2\text{Re}\left[\right]\MKet{0}{2X_0-2(m-1)-i}{2Y_0+2m-j}
+% \end{equation}
 
 
 
+\newpage
 \section{Spin-Correlated Amplitudes}
 Spin correlated amplitudes are necessary for building the subtraction function they arise because 
 we need to consider external off-shell photons and gluons in order to correctly capture the 
