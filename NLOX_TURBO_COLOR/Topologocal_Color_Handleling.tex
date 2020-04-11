@@ -51,11 +51,495 @@
 \def \MBra#1#2#3{\left<\hat{\mathcal{M}}_{#1}^{#2,#3}\right|}
 \def \MKet#1#2#3{\left|\hat{\mathcal{M}}_{#1}^{#2,#3}\right>}
 
-\title{\texttt{NLOX} Developer Notes}
+\title{\texttt{NLOX} Notes}
 \author{Diógenes Figueroa}
 \begin{document}
 % \date{Febrero 17 de 2017}
 \maketitle
+
+\section{Color Correlations}
+Color correlated matrix elements are available in \NLOX as of ver \Placeholder.
+The generation of color-correlated matrix elements is \texttt{off} per default, 
+it can be activated via the input file by setting:\\
+
+  \texttt{generateColorCorrelations = true}\\
+
+For evaluation, there exists a One-Loop-Provider level function thal calls for their evaluation:\\
+
+  \texttt{NLOX\_OLP\_EvalSubProcess\_CC(isub,type,cp,pp,next,mu,borncc,acc)}\\
+  
+  
+\noindent which can only be called for Born matrix elements. 
+The return pointer \texttt{borncc} must have a length of $1+\frac{n(n-1)}{2}$ where \texttt{NLOX} will store 
+the uncorrelated born as well as all the pairwise color-correlated matrix elements in lexicographical order on the labels of the external particles, the first entry is reserved for the uncorrelated Born.\\
+
+The implementation on the \texttt{FORM} code is done in \texttt{redefineFields.prc}, at this stage 
+we replace the usual color contraction tensor that communicates the tree with the tree*, if no 
+color-correlations are computed the tensor would be:
+
+\begin{equation}
+ (\mathcal{M}_0)^*(\tilde{\mathcal{M}_0}) = 
+ \mathcal{M}_0^{c_1,...,c_n}\delta_{c_1d_1}\dots\delta_{d_1d_n}\tilde{\mathcal{M}}_0^{*d_1,...,d_n} 
+ = \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>
+\end{equation}
+where the $c$'s and $d$'s denote either fundamental or adjoint indices depending on the nature 
+of the particle. We replace every intermediate tensor by:
+
+\begin{equation}
+ \delta_{c_id_i}\rightarrow \left(\text{ccL}_0\delta_{c_id_i}+ \text{ccLP }\text{ccL}_i (\textbf{T}^a)_{c_id_i}\right),
+\end{equation}
+the generator $\textbf{T}^a$ has different values depending on the nature of the particle:
+
+  \[ 
+  (\textbf{T}^a)_{c_id_i} =
+  \begin{cases} 
+      -(T^a)_{c_id_i} & \text{for initial quarks and final anti-quarks} \\
+      (T^a)_{d_ic_i} & \text{for initial anti-quarks and final quarks} \\
+      if^{c_id_ia} & \text{for gluons} 
+   \end{cases}
+  \]
+To produce just the required correlations we throw away any term that does not have $0$ or
+$2$ powers of ccLP, we also identify $\text{ccL}_0^2\rightarrow \text{ccL}_0$, $\text{ccLP}\rightarrow 1$ and 
+$\text{ccL}_0\text{ ccL}_i\rightarrow \text{ccL}_i$, the final result for the color-correlated amplitude inside \NLOX is:
+
+\begin{equation}
+  \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>_{CC} = 
+ \text{ccL}_0 \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right> +  
+ \sum_{i \neq j} \text{ccL}_i\text{ ccL}_j 
+ \Big<\mathcal{M}_0\Big|\textbf{T}_i\textbf{T}_j\left|\mathcal{\tilde M}_0\right>.
+\end{equation}
+
+\newpage
+\section{QCD and EW Real IR Poles}
+\subsection{Implementation @NLOX}
+
+Real IR-Pole routines are implemented within \NLOX, they are used 
+for comparing them with the IR behaviour of the generated virtual 
+amplitude and provide a stability check of the tensor reduction algorithm. 
+The routines that use this IR pole stability checks are available at the 
+One-Loop-Provider level via the function:\\
+
+\texttt{NLOX\_OLP\_EvalSubProcess\_Alpha(isub,i,type,cp,pp,next,mu,rval2,acc)}\\
+
+This function takes the same arguments as its non-Alpha counterpart except for the coupling-power
+combination specification \texttt{cp} which is now expected to be in the format \texttt{cp = asXaeY},
+where $X$ is the desired combined power of $\alpha_s$ and $Y$ is the desired combined power of $\alpha_e$.\\
+
+The result of the Real-IR pole is computed alongside the Virtual-IR pole coming from the tensor reduction
+procedure, as the LN Theorem states these two must cancel against each other to provide a finite 
+final result. This fact can be used to provide a check on the stability of the tensor reduction 
+algorithm since large differences point to numerical instabilities of the tensor reduction 
+procedure. There is a user-accesible parameter \texttt{IR\_THRESHOLD} that sets the level 
+of agreement required between the two IR-Poles for the phase-space-point to be considered safe,
+the dafault behaviour is that \NLOX deems a phase-space-point unstable if less than \texttt{IR\_THRESHOLD} significant digits agree between the two IR-Poles. \\
+
+\subsection{Master Formula}
+To calculate the Real-IR Pole \NLOX uses a dipole subtraction inspired formula, essentially we 
+compute the endpoint contribution of both the QCD and EW Dipoles applied to a particular LO 
+interference, in what follows we will only consider processes that are not loop induced meaning 
+that the leading order matrix elements are just a sum of tree level amplitudes:
+
+\begin{equation}
+ \left|\mathcal{M}_{0}\right> = \sum_{i,j}e^i g^j \left|\hat{\mathcal{M}}^{i,j}_{0}\right>
+\end{equation}
+and the differential cross section is a coupling-power convolution of tree matrix elements:
+
+\begin{equation}
+ \int d\sigma_{LO} = \int d\Phi_{n}
+ \sum_{a,b} g^{a} e^{b}\sum_{i,j}
+ \left<{\hat{\mathcal{M}}}^{i,j}_{0}\right|
+ \left|{\hat{\mathcal{M}}}^{a-i,b-j}_{0}\right>
+\end{equation}
+where as to go higher one power in both $\alpha_s$ and $\alpha_e$ we must consider the 1-loop
+matrix elements as well as trees with one extra external particle:
+
+\begin{equation}
+ \int d\sigma^V_{NLO} = 
+ \int d\Phi_{n}\sum_{a,b}
+ g^a e^b 
+ \sum_{i,j}
+ 2\text{Re}\left(
+ \MBra{0}{i}{j}
+%  \left(
+  \MKet{1}{a-i}{b-j}
+%  \right)
+ \right)
+\end{equation}
+the IR divergent part of the Real emission matrix element can be extracted analitycally in 
+dimensional regularization using a dipole subtraction scheme, in it the poles are contained 
+in the endpoint contributions of the QCD and EW dipoles:
+
+\begin{equation}
+ \int d\sigma^E_{NLO} = \int d\Phi_{n}
+ \sum_{a,b} g^{a} e^{b} 
+ \sum_{i,j}
+ \MBra{0}{i}{j}
+ \left(
+ g^2\textbf{G}_{QCD}
+ +
+ e^2\textbf{G}_{EWK}
+ \right)
+ \MKet{0}{a-i}{b-j}
+\end{equation}
+we use bold names to indicate that the endpoint contributions are operators in color and spin space. 
+These endpoint contributions contain both the real emission poles as well as the PDF counterterterm poles.
+The two differential cross sections are compared order by order in perturbation theory and since:
+
+\begin{equation}
+ \int d\Phi_n \left(d\sigma_{NLO}^V + d\sigma_{NLO}^E\right) \sim \mathcal{O}(\epsilon^0),
+ \label{cancellation}
+\end{equation}
+we expect the poles to be opposite in sign and cancel. As an example we show in tables~\ref{virt_uubar} and  \ref{real_uubar} the computed poles using both \TRed and the built-in endpoint contributions. 
+
+
+\newgeometry{left=0.35in,right=1in}
+\begin{table}[]
+ \begin{tabular}{|c|c|c|c|c|c|c}\hline
+ Order& Interference Type
+ & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
+ & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
+ $\alpha_s^3$                           
+ & 2Re$\left(\MBra{1}{4}{0}\MKet{0}{2}{0}\right)$
+ & \multicolumn{2}{c|}{-18.2085841576369} 
+ & \multicolumn{2}{c|}{-21.1265702280015} \\\hline
+ \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
+ & 2Re$\left(\MBra{1}{4}{0}\MKet{0}{0}{2}\right)$
+ & 1.5055728821233 & \multirow{2}{*}{-3.0583822882991} 
+ & 4.2169093557827 & \multirow{2}{*}{-17.7740636794077} \\
+ & 2Re$\left(\MBra{1}{2}{2}\MKet{0}{2}{0}\right)$
+ & -4.5639551704224 && -21.9909730351904 &\\\hline
+ \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
+ & 2Re$\left(\MBra{1}{2}{2}\MKet{0}{0}{2}\right)$
+ & -21.6853196393154 & \multirow{2}{*}{-21.1834620119410} 
+ & -94.6803519429044 & \multirow{2}{*}{-92.5133587992241} \\
+ & 2Re$\left(\MBra{1}{0}{4}\MKet{0}{2}{0}\right)$
+ & 0.5018576273744 && 2.1669931436803 &\\\hline
+ $\alpha_e^3$                                                                             
+ & 2Re$\left(\MBra{1}{0}{4}\MKet{0}{0}{2}\right)$
+ & \multicolumn{2}{c|}{-7.3957257555633} 
+ & \multicolumn{2}{c|}{-31.9343298391047} \\\hline
+   \multicolumn{2}{|c|}{\textbf{Total}}     
+ & \multicolumn{2}{c|}{\textbf{-49.8461542134402}} 
+ & \multicolumn{2}{c|}{\textbf{-163.3483225457380}}\\\hline
+ \end{tabular}
+ \caption{Virtual IR Poles for $u\bar u\longrightarrow u\bar u$ using \TRed}
+ \label{virt_uubar}
+ 
+ 
+\vskip 0.75cm
+
+ \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+ Order& Interference Type
+ & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
+ & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
+ $\alpha_s^3$                           
+ & $\MBra{0}{2}{0}\textbf{G}_{QCD}\MKet{0}{2}{0}$
+ & \multicolumn{2}{|c|}{18.2085841576370} 
+ & \multicolumn{2}{|c|}{21.1265702280016} \\\hline
+ \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
+ & 2Re$\left(\MBra{0}{2}{0}\textbf{G}_{QCD}\MKet{0}{0}{2}\right)$
+ & -3.0111457642466 & \multirow{2}{*}{3.0583822882991} 
+ & -8.4338187115655 & \multirow{2}{*}{-17.7740636794077} \\
+ & $\MBra{0}{2}{0}\textbf{G}_{EWK}\MKet{0}{2}{0}$
+ & 6.0695280525457 && 26.2078823909731 &\\\hline
+ \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
+ & $\MBra{0}{0}{2}\textbf{G}_{QCD}\MKet{0}{0}{2}$
+ & 22.1871772666898 & \multirow{2}{*}{21.1834620119409} 
+ & 96.8473450865848 & \multirow{2}{*}{92.5133587992241} \\
+ & 2Re$\left(\MBra{0}{0}{2}\textbf{G}_{EWK}\MKet{0}{2}{0}\right)$ 
+ & -1.0037152547489 && -4.3339862873607 &\\\hline
+ $\alpha_e^3$                                                                             
+ & $\MBra{0}{0}{2}\textbf{G}_{EWK}\MKet{0}{0}{2}$
+ & \multicolumn{2}{|c|}{7.3957257555633} 
+ & \multicolumn{2}{|c|}{31.9343298391050} \\\hline
+   \multicolumn{2}{|c|}{\textbf{Total}}     
+ & \multicolumn{2}{|c|}{\textbf{49.8461542134403}} 
+ & \multicolumn{2}{|c|}{\textbf{163.3483225457380}}\\\hline
+ \end{tabular}
+ \caption{Real IR Poles for $u\bar u\longrightarrow u\bar u$ using the dipole subtraction formalism.}
+ \label{real_uubar}
+
+\footnotesize
+\newgeometry{left=0.5in,right=0.5in}
+\vskip0.75cm
+\begin{tabular}{|c|c|c|c|c|c|c}\hline
+ Order& Interference Type
+ & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
+ & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
+ $\alpha_s^3$                           
+ & 2Re$\left(\MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{2}{0}\right)$
+ & \multicolumn{2}{c|}{18.2085841576369} 
+ & \multicolumn{2}{c|}{21.1265702280015} \\\hline
+ \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
+ & 2Re$\left(\MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{0}{2}\right)$
+ & -1.5055728821233 & \multirow{2}{*}{3.0583822882991} 
+ & -4.2169093557827 & \multirow{2}{*}{17.7740636794077} \\
+ & 2Re$
+ \left(\left[
+ \MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{QCD}
+ +
+ \MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{EWK}
+ \right]
+ \MKet{0}{2}{0}\right)$
+ & 4.5639551704224 && 21.9909730351904 &\\\hline
+ \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
+ & 2Re$
+ \left(\left[
+ \MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{QCD}
+ +
+ \MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{EWK}
+ \right]
+ \MKet{0}{0}{2}\right)$
+ & 21.6853196393154 & \multirow{2}{*}{21.1834620119409} 
+ & 94.6803519429044 & \multirow{2}{*}{92.5133587992241} \\
+ & 2Re$\left(\MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{2}{0}\right)$
+ & -0.5018576273744 && -2.1669931436803 &\\\hline
+ $\alpha_e^3$                                                                             
+ & 2Re$\left(\MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{0}{2}\right)$
+ & \multicolumn{2}{c|}{7.3957257555633} 
+ & \multicolumn{2}{c|}{31.9343298391050} \\\hline
+   \multicolumn{2}{|c|}{\textbf{Total}}     
+ & \multicolumn{2}{c|}{\textbf{49.8461542134403}} 
+ & \multicolumn{2}{c|}{\textbf{163.3483225457380}}\\\hline
+ \end{tabular}
+ \caption{Real IR Poles for $u\bar u\rightarrow u\bar u$, using dipole subtraction and separating the 
+ specific 1-loop amplitude contributions.}
+ \label{1loop_disentangled}
+\end{table}
+\restoregeometry
+
+\subsection{1-loop Matrix element specific IR behaviour}
+The cancellation of the IR divergences must be fullfilled at fixed order on square amplitudes,
+where the real and virtual matrix elemants can be combined, as shown on the rows of tasbles \ref{virt_uubar}
+and \ref{real_uubar}. Alternatively one might attempt to check for the IR pole cancellation 
+for a particular interference term on the virtual NLO cross section, this is also possible and 
+we will discuss how we do it inside \NLOX. In general the IR behaviour of any given 1-loop amplitude 
+is given by the sum of endpoint contributions:
+
+\begin{equation}
+ \MKet{1}{X}{Y} \rightarrow -\frac{1}{2}
+ \left(
+ \textbf{G}_{QCD}\MKet{0}{X-2}{Y} 
+ + 
+ \textbf{G}_{EWK}\MKet{0}{X}{Y-2}
+ \right),
+ \label{Theo}
+\end{equation}
+meaning that the squared amplitude built by using the sum on the RHS yields the opposite IR poles as the 
+one built using the LHS as shown in tables \ref{virt_uubar} \ref{1loop_disentangled}. 
+We just need to change variables on the endpoint contribution convolution:
+
+\begin{equation}
+ \int d\sigma^E_{NLO} = \int d\Phi_{n}
+ \sum_{a,b} g^{a} e^{b} 
+ \sum_{i,j}
+ \text{Re}\left(
+ \MBra{0}{i}{j}
+ \left[
+ \textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
+ +
+ \textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
+ \right]
+ \right)
+\end{equation}
+where we are now summing two extra zeros at the upper limits of both inner sums to cast it in the same 
+way as the 1-loop amplitude. Witout loss of generality we take the real part of each term, 
+because if the amplitudes in a term are different then there will be another term in the sum with the roles of the amplitudes reversed and thus the value of such term is the complex conjugate of the value of the term in question, thus the imaginary parts cancel. 
+If both amplitudes in a term are the same there is only one contribution of this 
+kind, but since the gauge group is $SU(3)$ and the operators $\textbf{G}$ are built from its 
+generators then it follows that the $\textbf{G}$ operators have real eigenvalues.\\
+
+Using eq.~\eqref{cancellation} we conclude that:
+
+\begin{equation}
+ \sum_{ij}2\text{Re}
+ \left(
+ \MBra{0}{i}{j}
+ \left[
+ \MKet{1}{a-i}{b-j}
+ +
+ \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
+ +
+ \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
+ \right]
+ \right)=0 \hskip0.3cm \forall a,b
+\end{equation}
+to arrive to the conclusion in eq.\eqref{Theo} one must just note that this is true for the extreme cases 
+where either $a$ or $b$ have their minimum value, let's call $a_0,a_1$ and $b_0,b_1$ the extreme values of $a$ and $b$ respectively, then the previous sum reduces to a single term on the extreme cases:
+
+\begin{equation}
+ \MBra{0}{i_0}{j_1}
+ \left[
+ \MKet{1}{a_0-i_0}{b_1-j_1}
+ +
+ \cancelto{0}{\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_0-2-i_0}{b_1-j_1}}
+ +
+ \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_0-i_0}{b_1-2-j_1}
+ \right]=0
+\end{equation}
+
+\begin{equation}
+ \MBra{0}{i_1}{j_0}
+ \left[
+ \MKet{1}{a_1-i_1}{b_0-j_0}
+ +
+ \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_1-2-i_1}{b_0-j_0}
+ +
+ \cancelto{0}{\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_1-i_1}{b_0-2-j_0}}
+ \right]=0
+\end{equation}
+the particular values of $i_0,i_1$ and $j_0,j_1$ depend on the specifics of the process, they are the 
+extreme values of $i$ and $j$ on the Born matrix element alone.
+We can prove by induction that this is true for all other orders, since the consecutive terms (in the sense of increasing value of $a$ or $b$) only contain one extra 1-loop amplitude whose IR behaviour is not yet determined.
+
+
+% \begin{equation}
+%  \MKet{1}{X_0+2}{Y_0} \rightarrow -\frac{1}{2}
+%  \left(
+%  \textbf{G}_{QCD}\MKet{0}{X_0}{Y_0} 
+%  + 
+%  \textbf{G}_{EWK}\cancelto{0}{\MKet{0}{X_0+2}{Y_0-2}}
+%  \right),
+%  \label{boundary}
+% \end{equation}
+% since the second term vanishes, this statement is identical to \eqref{cancellation} when evaluated at the maximum power of $g$. Now we proceed to prove \eqref{Theo} by induction, we assume that for every $n<m-1$ the statement:
+% \begin{equation}
+%   \MKet{1}{X_0-2(n-1)}{Y_0+2n}\rightarrow -\frac{1}{2}
+%   \left(
+%   \textbf{G}_{QCD}\MKet{0}{X_0-2n}{Y_0+2n} 
+%  + 
+%  \textbf{G}_{EWK}\MKet{0}{X_0-2(n-1)}{Y_0+2(n-1)}
+%  \right)
+% \end{equation}
+% holds and use \eqref{cancellation} to prove that it must hold for $n=m$. Using \eqref{cancellation} at fixed 
+% order of $g^{2X_0+2(m-1)}e^{2Y_0+2m}$ we have:
+% 
+% \begin{equation}
+%  \Int{\Phi_n} \sum_{i,j}2\text{Re}\left[\right]\MKet{0}{2X_0-2(m-1)-i}{2Y_0+2m-j}
+% \end{equation}
+
+
+
+\newpage
+\section{Spin-Correlated Amplitudes}
+Spin correlated amplitudes are necessary for building the subtraction function they arise because 
+we need to consider external off-shell photons and gluons in order to correctly capture the 
+radiative matrix element's behaviour. The dipole functions for the emitter $p_{ij}$ and spectator $p_k$:
+
+\begin{equation}
+ \textbf{G}_{g\rightarrow g_ig_j}^{\mu\nu} = 
+ \left(
+%  -g^{\mu\nu}\left(\frac{1}{1-z_i(1-y_{ij,k})}+\frac{1}{1-z_j(1-y_{ij,k})}-2\right)
+ -g^{\mu\nu}F_{ij,k}
+ +
+%  \left(\frac{D-2}{2}\right)\frac{(p_i^\mu z_i-p_j^\mu z_j)(p_i^\nu z_i-p_j^\nu z_j)}{p_i.p_j}  
+ v_{ij,k}^\mu v_{ij,k}^\nu 
+\right) \textbf{T}_{ij}\textbf{T}_k
+\end{equation}
+
+\begin{equation}
+ \textbf{G}_{g,\gamma \rightarrow q_i \bar q_j}^{\mu\nu} = 
+ \left(
+ -g^{\mu\nu}
+ +
+%  \frac{2}{p_i.p_j}(p_i^\mu z_i-p_j^\mu z_j)(p_i^\nu z_i-p_j^\nu z_j)
+ 2 v_{ij,k}^\mu v_{ij,k}^\nu
+ \right)\textbf{T}_{ij}\textbf{T}_{k}
+\end{equation}
+it is understood that the \textbf{T}-operator of the photon is the identity.
+Operationally this is very similar to what needs to be modified in the case of color-correlations alone,
+one might simply add two extra pieces into the polarization vectors of the external photons and 
+gluons on the squared amplitude:
+
+\begin{equation}
+    \epsilon_\mu(p_i)\epsilon^{*}_\nu(p_i) \rightarrow 
+    \epsilon_\mu(p_i)\epsilon^{*}_\nu(p_i) + sc_{i0} g_{\mu\nu} + sc_{i} v_{i\mu} v_{i\nu},
+\end{equation}
+then we can select the particular spin-correlated amplitude by simply setting this coefficients 
+to the particular $2\rightarrow n+1$ values, of course this would mean that the born matrix element
+depends on one extra vector per gluon and photon.
+
+
+\newpage
+\section{Phase-Space-Point Correction Algorithm}
+In building a pole comparison library for \NLOX we noted that the ficticious off-shellness of
+some of the particles in a process leads to large differences on the predictions for the poles 
+coming from \TRed and the pole library. This might be due to the reduction algorithm picking 
+the wrong branch for some of the scalar integrals, to ease this kind of numerical errors we 
+decided to implement an algorithm that corrects the momenta passed to the OLP functions before 
+it is submitted to \TRed for the reduction algorithm.\\
+
+\subsection{Correcting Squared Momenta}
+For all that follows we will work in the center of mmomentum frame of $P=p_1+p_2$.
+To modify the momenta passed to the OLP fnctions the least amount possible 
+but  at the same time increase the on-shellness as much as possible, 
+we need to shift $p^\mu$ parallel to the gradient of $m^2$ with respect to $p^\mu$:
+
+\begin{equation}
+ \frac{d}{dp^\mu}m^2 = p_\mu = \bar p^\mu,
+\end{equation}
+thus we shift $p^\mu\rightarrow p^\mu+\alpha\bar p^\mu$ and 
+we require the change to correct for the missmatch between the passed value of $m^2$ and $p^2$:
+
+\begin{equation}
+ m^2 = (p^\mu+\alpha\bar p^\mu )^2 = p^2 + 2\alpha\hskip 0.1cm p.\bar p+\mathcal{O}(\alpha^2),
+\end{equation}
+we drop quadratic terms for two reasons, they are small, we are assuming the missmatch to be a consequence 
+of numerical error so we do not expect to see large differences between $m^2$ and $p^2$. Second and most 
+important, to include them requires to correctly choose the branch on a square-root that we prefer to avoid 
+because it is slow and might lead to further instabilites. The shift for the finals is:
+
+\begin{equation}
+p_f^\mu\rightarrow p_f^\mu+\frac{m_f^2-p_f^2}{2(p_f.\bar p_f)}\bar p_f^\mu.
+\end{equation}
+
+\subsection{Correcting Momentum Conservation}
+After correcting for the squares of the finals momentum conservation might be spoiled and we now 
+need to correct for this. The approach we will take is that the final momenta have the correct 
+total cneter of mass energy and the initials have the wrong center of mass energy, this choice is 
+also motivated due to the fact that we have not corrected for possible mismatches in the initial squared
+moment and we will correct for it as well. The procedure is to pretend that the initial masses are not the 
+values passed to the OLP functions but rather:
+
+\begin{equation}
+ \sqrt{\frac{P^2}{\tilde P^2}}m_i\equiv \sqrt{\beta}m_i,
+\end{equation}
+are the correct values, where $\tilde P$ is the sum of final momenta after correcting the squares.
+We correct for this mismatch in same way we did for the finals and later we rescale 
+the momenta by $1/\beta$ this in turns will shift the masses to their correct values of $m_i$.
+For the initials the total change is:
+
+\begin{equation}
+ p_i^\mu \rightarrow \frac{1}{\sqrt\beta}
+ \left(
+ p_i^\mu 
+ + 
+ \frac{\beta m_i^2-p_i^2}{2(p_i.\bar p_i)}\bar p_i^\mu
+ \right).
+\end{equation}
+What we have at this stage are two sets of momenta which are on-shell and have the same 
+center of momentum frame energy, the last step we need to do is to boost each set into 
+its center of momentum frame to recover a sesible phase-space point.
+
+\subsection{Extending momenta into higher precision}
+We might be interested in a related problem which is to extend a phase-space point to 
+a higher working precision, this might be useful in unstable regions of phase space 
+where the reduction might need to go into higher precision to handle large cancellations between 
+different contributions. With that in mind we wrote a couple phase-space routines that can handle 
+phase space generation and phase-space point correction in up to quadruple precision.
+In it there is an implementation of four-vectors \texttt{FVector} which can be casted 
+in any precision, the idea being that the OLP functions use this class and extend the now 
+quadruple-precision support of \texttt{NLOX} which at the moment is present in \texttt{TRed} only.\\
+
+The use of the correction routine becomes more aparent since per default phase-space point 
+will be stored at double precision and to extend this phase space points into higher precision
+one might simply pretend the phase-space point is really a quadruple precision phase-space point 
+with mismatch in all the digits beyond those stored at double precision. Thus we just need to call 
+for a correction of this phase-space point at quadruple-precision.
+
+
+
+\newpage
 \section{Color Handling @\texttt{NLOX}}
 In this section we will discuss the method by which \texttt{NLOX} handles color matrices to reduce the number 
 of evaluations of color traces. The general scheme is to recursively apply the following set of identities for 
@@ -310,575 +794,205 @@ possition of the nodes is also irrelevant for the value of the graph, for exampl
 
 have the same value.
 
-\subsection{Expression Classification using Graphs}
-We now proceed to describe the classification procedure and how it is currently implemented in \texttt{NLOX}.
-Graphs with only two nodes are evaluated down to a number trivially by the rules given in \eqref{}, so to start
-we consider expressions with $4$ $f$ tensors, as we described before there is only one such strcture upon cannonical ordering, which is the tetrahedral graph:
-
-
-\begin{center}
-\begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
-                    semithick]
-  \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
-  \tikzstyle{equation} = [
-    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-  \node[state] (1)                   {};
-  \node[state] (2) [above of=1]      {};
-  \node[state] (3) [below left  of=1]      {};
-  \node[state] (4) [below right of=1]      {};
-  \node[] (Separator) [above right of=4]      {};
-  \node[equation] (Value) [right of=Separator] {\begin{minipage}[ht!]{0.2\textwidth}
-                                               ×\begin{equation*}
-                                                   \hskip0.5cm =\hskip0.5cm  \frac{N_c^2(N_c^2-1)}{2}
-                                                \end{equation*}
-                                              \end{minipage}};
-  \draw[red]
-  (1) edge node{} (2)
-  (1) edge node{} (3)
-  (1) edge node{} (4)
-  (2) edge [bend right]node{} (3)
-  (3) edge [bend right]node{} (4)
-  (4) edge [bend right]node{} (2);
-  \end{tikzpicture}
-\end{center}
-
-for exprssions with $6$ \FNodes there are only $2$ possible graphs that are not trivially reduced to the tetrahedral graph, $K_{3,3}$ and the triangular prism graph shown above:
-
-\begin{center}
-\begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
-                    semithick]
-  \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
-  \tikzstyle{equation} = [
-    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-  
-
-  \node[state] (1)                   {};
-  \node[state] (2) [below left of=1]      {};
-  \node[state] (3) [above left of=1]      {};
-  \node[state] (4) [right of=1]      {};
-  \node[state] (5) [above right of=4]      {};
-  \node[state] (6) [below right of=4]      {};
-  \draw[red] 
-        (1) edge   []         node {} (2)
-        (2) edge   []         node {} (3)
-        (3) edge   []         node {} (1)
-        (1) edge   []         node {} (4)
-        (2) edge   []         node {} (6)
-        (3) edge   []         node {} (5)
-        (4) edge   []         node {} (5)
-        (5) edge   []         node {} (6)
-        (6) edge   []         node {} (4);
-
-  \node[] (Separator) [above right of=6]      {};
-  \node[equation] (Value) [right of=Separator] {\begin{minipage}{0.2\textwidth}
-                                               ×\begin{equation*}
-                                                   \hskip0.5cm =\hskip0.5cm \frac{N_c^3(N_c^2-1)}{4}
-                                                \end{equation*}
-                                              \end{minipage}};
-\end{tikzpicture}  
-\end{center}
-
-\begin{center}
-\begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
-                    semithick]
-  \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
-  \tikzstyle{equation} = [
-    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-  
-
-  \node[state] (1){};
-  
-  \node[] (2B) [below of=1]      {};
-  \node[state] (2) [below of=2B]      {};
-  
-  \node[state] (3) [right of=2]      {};
-  \node[] (3B) [above of=3]      {};
-  
-  \node[state] (4) [right of=3]      {};
-  \node[] (4B) [above of=4]      {};
-  
-  \node[state] (5) [right of=1]      {};
-  \node[state] (6) [right of=5]      {};
-  
-  \draw[red] 
-        (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (2)
-        (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (3)
-        (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (4)
-        (2) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
-        (2) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6)
-        (3) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
-        (3) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6)
-        (4) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
-        (4) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6);
-  \node[] (Separator) [right of=4B]      {};
-  \node[equation] (Value) [right of=Separator] {\begin{minipage}{0.2\textwidth}
-                                               ×\begin{equation*}
-                                                   \hskip0.5cm =\hskip0.5cm 0
-                                                \end{equation*}
-                                              \end{minipage}};
-\end{tikzpicture}  
-\end{center}
-
-while for $8$ \FNodes we 3 planar structures:
-\begin{center}
-\begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
-                    semithick]
-  \tikzstyle{every state}=[fill=red,draw=red,minimum size=3mm]
-  \tikzstyle{equation} = [
-    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
-  
-  \node[]      (20) at (0,0) [] {};
-  \node[state] (21) at ( 0.6, 0.6) [] {};
-  \node[state] (22) at (-0.6, 0.6) [] {};
-  \node[state] (23) at (-0.6,-0.6) [] {};
-  \node[state] (24) at ( 0.6,-0.6) [] {};
-  \node[state] (25) at ( 1.2, 1.2) [] {};
-  \node[state] (26) at (-1.2, 1.2) [] {}; 
-  \node[state] (27) at (-1.2,-1.2) [] {};
-  \node[state] (28) at ( 1.2,-1.2) [] {};
-  
-  \draw[red] 
-        (21) edge  node {} (22)
-        (22) edge  node {} (23)
-        (23) edge  node {} (24)
-        (24) edge  node {} (21)
-        (25) edge  node {} (26)
-        (26) edge  node {} (27)
-        (27) edge  node {} (28)
-        (28) edge  node {} (25)
-        (21) edge  node {} (25)
-        (22) edge  node {} (26)
-        (23) edge  node {} (27)
-        (24) edge  node {} (28);
-  
-  \tikzset{shift={(3.5,0)}}
-  
-  \node[] at (0,0) [] {};
-  \node[state] (1) at (1,0) [] {};
-  \node[state] (2) at (0.3090,0.9510) [] {};
-  \node[state] (3) at (-0.809017, 0.587785) [] {};
-  \node[state] (4) at (-0.809017, -0.587785) [] {};
-  \node[state] (5) at (0.3090,-0.9510) [] {};
-  \node[state] (6) at (2,0) {};
-  \node[state] (7) [above right of=3] {};
-  \node[state] (8) [below right of=4] {};
-  
-  \draw[red] 
-        (1) edge  node {} (2)
-        (2) edge  node {} (3)
-        (3) edge  node {} (4)
-        (4) edge  node {} (5)
-        (5) edge  node {} (1)
-        (1) edge  node {} (6)
-        (2) edge  node {} (7)
-        (5) edge  node {} (8)
-        (6) edge  node {} (7)
-        (6) edge  node {} (8)
-        (7) edge  node {} (3)
-        (8) edge  node {} (4);
-  
-  
-  \tikzset{shift={(5.5,0)}}
-  \node[]      (10) at (0,0) [] {};
-  \node[state] (11) at (1,0) [] {};
-  \node[state] (12) at (0.5,0.866025) [] {};
-  \node[state] (13) at (-0.5,0.866025) [] {};
-  \node[state] (14) at (-1,0) [] {};
-  \node[state] (15) at (-0.5,-0.866025)  [] {};
-  \node[state] (16) at (0.5,-0.866025) [] {};
-  \node[state] (17) at (2,0) {};
-  \node[state] (18) at (-2,0) {};
-  
-  \draw[red] 
-        (11) edge  node {} (12)
-        (12) edge  node {} (13)
-        (13) edge  node {} (14)
-        (14) edge  node {} (15)
-        (15) edge  node {} (16)
-        (16) edge  node {} (11)
-        (17) edge  node {} (11)
-        (17) edge  node {} (16)
-        (17) edge  node {} (12)
-        (18) edge  node {} (14)
-        (18) edge  node {} (15)
-        (18) edge  node {} (13);
-  
-  
-  \end{tikzpicture}  
-\end{center}
-
-\newpage
-\section{Color Correlations}
-Color correlated matrix elements are available in \NLOX as of ver \Placeholder.
-The generation of color-correlated matrix elements is \texttt{off} per default, 
-it can be activated via the input file by setting:\\
-
-  \texttt{generateColorCorrelations = true}\\
-
-For evaluation, there exists a One-Loop-Provider level function thal calls for their evaluation:\\
-
-  \texttt{NLOX\_OLP\_EvalSubProcess\_CC(isub,type,cp,pp,next,mu,borncc,acc)}\\
-  
-  
-\noindent which can only be called for Born matrix elements. 
-The return pointer \texttt{borncc} must have a length of $1+\frac{n(n-1)}{2}$ where \texttt{NLOX} will store 
-the uncorrelated born as well as all the pairwise color-correlated matrix elements in lexicographical order on the labels of the external particles, the first entry is reserved for the uncorrelated Born.\\
-
-The implementation on the \texttt{FORM} code is done in \texttt{redefineFields.prc}, at this stage 
-we replace the usual color contraction tensor that communicates the tree with the tree*, if no 
-color-correlations are computed the tensor would be:
-
-\begin{equation}
- (\mathcal{M}_0)^*(\tilde{\mathcal{M}_0}) = 
- \mathcal{M}_0^{c_1,...,c_n}\delta_{c_1d_1}\dots\delta_{d_1d_n}\tilde{\mathcal{M}}_0^{*d_1,...,d_n} 
- = \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>
-\end{equation}
-where the $c$'s and $d$'s denote either fundamental or adjoint indices depending on the nature 
-of the particle. We replace every intermediate tensor by:
-
-\begin{equation}
- \delta_{c_id_i}\rightarrow \left(\text{ccL}_0\delta_{c_id_i}+ \text{ccLP }\text{ccL}_i (\textbf{T}^a)_{c_id_i}\right),
-\end{equation}
-the generator $\textbf{T}^a$ has different values depending on the nature of the particle:
-
-  \[ 
-  (\textbf{T}^a)_{c_id_i} =
-  \begin{cases} 
-      -(T^a)_{c_id_i} & \text{for initial quarks and final anti-quarks} \\
-      (T^a)_{d_ic_i} & \text{for initial anti-quarks and final quarks} \\
-      if^{c_id_ia} & \text{for gluons} 
-   \end{cases}
-  \]
-To produce just the required correlations we throw away any term that does not have $0$ or
-$2$ powers of ccLP, we also identify $\text{ccL}_0^2\rightarrow \text{ccL}_0$, $\text{ccLP}\rightarrow 1$ and 
-$\text{ccL}_0\text{ ccL}_i\rightarrow \text{ccL}_i$, the final result for the color-correlated amplitude inside \NLOX is:
-
-\begin{equation}
-  \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right>_{CC} = 
- \text{ccL}_0 \Big<\mathcal{M}_0\Big|\left|\mathcal{\tilde M}_0\right> +  
- \sum_{i \neq j} \text{ccL}_i\text{ ccL}_j 
- \Big<\mathcal{M}_0\Big|\textbf{T}_i\textbf{T}_j\left|\mathcal{\tilde M}_0\right>.
-\end{equation}
-
-\newpage
-\section{QCD and EW Real IR Poles}
-\subsection{Implementation @NLOX}
-
-Real IR-Pole routines are implemented within \NLOX, they are used 
-for comparing them with the IR behaviour of the generated virtual 
-amplitude and provide a stability check of the tensor reduction algorithm. 
-The routines that use this IR pole stability checks are available at the 
-One-Loop-Provider level via the function:\\
-
-\texttt{NLOX\_OLP\_EvalSubProcess\_Alpha(isub,i,type,cp,pp,next,mu,rval2,acc)}\\
-
-This function takes the same arguments as its non-Alpha counterpart except for the coupling-power
-combination specification \texttt{cp} which is now expected to be in the format \texttt{cp = asXaeY},
-where $X$ is the desired combined power of $\alpha_s$ and $Y$ is the desired combined power of $\alpha_e$.\\
-
-The result of the Real-IR pole is computed alongside the Virtual-IR pole coming from the tensor reduction
-procedure, as the LN Theorem states these two must cancel against each other to provide a finite 
-final result. This fact can be used to provide a check on the stability of the tensor reduction 
-algorithm since large differences point to numerical instabilities of the tensor reduction 
-procedure. There is a user-accesible parameter \texttt{IR\_THRESHOLD} that sets the level 
-of agreement required between the two IR-Poles for the phase-space-point to be considered safe,
-the dafault behaviour is that \NLOX deems a phase-space-point unstable if less than \texttt{IR\_THRESHOLD} significant digits agree between the two IR-Poles. \\
-
-\subsection{Master Formula}
-To calculate the Real-IR Pole \NLOX uses a dipole subtraction inspired formula, essentially we 
-compute the endpoint contribution of both the QCD and EW Dipoles applied to a particular LO 
-interference, in what follows we will only consider processes that are not loop induced meaning 
-that the leading order matrix elements are just a sum of tree level amplitudes:
-
-\begin{equation}
- \left|\mathcal{M}_{0}\right> = \sum_{i,j}e^i g^j \left|\hat{\mathcal{M}}^{i,j}_{0}\right>
-\end{equation}
-and the differential cross section is a coupling-power convolution of tree matrix elements:
-
-\begin{equation}
- \int d\sigma_{LO} = \int d\Phi_{n}
- \sum_{a,b} g^{a} e^{b}\sum_{i,j}
- \left<{\hat{\mathcal{M}}}^{i,j}_{0}\right|
- \left|{\hat{\mathcal{M}}}^{a-i,b-j}_{0}\right>
-\end{equation}
-where as to go higher one power in both $\alpha_s$ and $\alpha_e$ we must consider the 1-loop
-matrix elements as well as trees with one extra external particle:
-
-\begin{equation}
- \int d\sigma^V_{NLO} = 
- \int d\Phi_{n}\sum_{a,b}
- g^a e^b 
- \sum_{i,j}
- 2\text{Re}\left(
- \MBra{0}{i}{j}
-%  \left(
-  \MKet{1}{a-i}{b-j}
-%  \right)
- \right)
-\end{equation}
-the IR divergent part of the Real emission matrix element can be extracted analitycally in 
-dimensional regularization using a dipole subtraction scheme, in it the poles are contained 
-in the endpoint contributions of the QCD and EW dipoles:
-
-\begin{equation}
- \int d\sigma^E_{NLO} = \int d\Phi_{n}
- \sum_{a,b} g^{a} e^{b} 
- \sum_{i,j}
- \MBra{0}{i}{j}
- \left(
- g^2\textbf{G}_{QCD}
- +
- e^2\textbf{G}_{EWK}
- \right)
- \MKet{0}{a-i}{b-j}
-\end{equation}
-we use bold names to indicate that the endpoint contributions are operators in color and spin space. 
-These endpoint contributions contain both the real emission poles as well as the PDF counterterterm poles.
-The two differential cross sections are compared order by order in perturbation theory and since:
-
-\begin{equation}
- \int d\Phi_n \left(d\sigma_{NLO}^V + d\sigma_{NLO}^E\right) \sim \mathcal{O}(\epsilon^0),
- \label{cancellation}
-\end{equation}
-we expect the poles to be opposite in sign and cancel. As an example we show in tables~\ref{virt_uubar} and  \ref{real_uubar} the computed poles using both \TRed and the built-in endpoint contributions. 
-
-
-\newgeometry{left=0.35in,right=1in}
-\begin{table}[]
- \begin{tabular}{|c|c|c|c|c|c|c}\hline
- Order& Interference Type
- & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
- & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
- $\alpha_s^3$                           
- & 2Re$\left(\MBra{1}{4}{0}\MKet{0}{2}{0}\right)$
- & \multicolumn{2}{c|}{-18.2085841576369} 
- & \multicolumn{2}{c|}{-21.1265702280015} \\\hline
- \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
- & 2Re$\left(\MBra{1}{4}{0}\MKet{0}{0}{2}\right)$
- & 1.5055728821233 & \multirow{2}{*}{-3.0583822882991} 
- & 4.2169093557827 & \multirow{2}{*}{-17.7740636794077} \\
- & 2Re$\left(\MBra{1}{2}{2}\MKet{0}{2}{0}\right)$
- & -4.5639551704224 && -21.9909730351904 &\\\hline
- \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
- & 2Re$\left(\MBra{1}{2}{2}\MKet{0}{0}{2}\right)$
- & -21.6853196393154 & \multirow{2}{*}{-21.1834620119410} 
- & -94.6803519429044 & \multirow{2}{*}{-92.5133587992241} \\
- & 2Re$\left(\MBra{1}{0}{4}\MKet{0}{2}{0}\right)$
- & 0.5018576273744 && 2.1669931436803 &\\\hline
- $\alpha_e^3$                                                                             
- & 2Re$\left(\MBra{1}{0}{4}\MKet{0}{0}{2}\right)$
- & \multicolumn{2}{c|}{-7.3957257555633} 
- & \multicolumn{2}{c|}{-31.9343298391047} \\\hline
-   \multicolumn{2}{|c|}{\textbf{Total}}     
- & \multicolumn{2}{c|}{\textbf{-49.8461542134402}} 
- & \multicolumn{2}{c|}{\textbf{-163.3483225457380}}\\\hline
- \end{tabular}
- \caption{Virtual IR Poles for $u\bar u\longrightarrow u\bar u$ using \TRed}
- \label{virt_uubar}
- 
- 
-\vskip 0.75cm
-
- \begin{tabular}{|c|c|c|c|c|c|c|}\hline
- Order& Interference Type
- & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
- & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
- $\alpha_s^3$                           
- & $\MBra{0}{2}{0}\textbf{G}_{QCD}\MKet{0}{2}{0}$
- & \multicolumn{2}{|c|}{18.2085841576370} 
- & \multicolumn{2}{|c|}{21.1265702280016} \\\hline
- \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
- & 2Re$\left(\MBra{0}{2}{0}\textbf{G}_{QCD}\MKet{0}{0}{2}\right)$
- & -3.0111457642466 & \multirow{2}{*}{3.0583822882991} 
- & -8.4338187115655 & \multirow{2}{*}{-17.7740636794077} \\
- & $\MBra{0}{2}{0}\textbf{G}_{EWK}\MKet{0}{2}{0}$
- & 6.0695280525457 && 26.2078823909731 &\\\hline
- \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
- & $\MBra{0}{0}{2}\textbf{G}_{QCD}\MKet{0}{0}{2}$
- & 22.1871772666898 & \multirow{2}{*}{21.1834620119409} 
- & 96.8473450865848 & \multirow{2}{*}{92.5133587992241} \\
- & 2Re$\left(\MBra{0}{0}{2}\textbf{G}_{EWK}\MKet{0}{2}{0}\right)$ 
- & -1.0037152547489 && -4.3339862873607 &\\\hline
- $\alpha_e^3$                                                                             
- & $\MBra{0}{0}{2}\textbf{G}_{EWK}\MKet{0}{0}{2}$
- & \multicolumn{2}{|c|}{7.3957257555633} 
- & \multicolumn{2}{|c|}{31.9343298391050} \\\hline
-   \multicolumn{2}{|c|}{\textbf{Total}}     
- & \multicolumn{2}{|c|}{\textbf{49.8461542134403}} 
- & \multicolumn{2}{|c|}{\textbf{163.3483225457380}}\\\hline
- \end{tabular}
- \caption{Real IR Poles for $u\bar u\longrightarrow u\bar u$ using the dipole subtraction formalism.}
- \label{real_uubar}
-
-\footnotesize
-\newgeometry{left=0.5in,right=0.5in}
-\vskip0.75cm
-\begin{tabular}{|c|c|c|c|c|c|c}\hline
- Order& Interference Type
- & \multicolumn{2}{c}{$1/\epsilon^{2}$} 
- & \multicolumn{2}{|c|}{$1/\epsilon$}\\\hline
- $\alpha_s^3$                           
- & 2Re$\left(\MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{2}{0}\right)$
- & \multicolumn{2}{c|}{18.2085841576369} 
- & \multicolumn{2}{c|}{21.1265702280015} \\\hline
- \multirow{2}{*}{$\alpha_s^2\alpha_e$}                                                        
- & 2Re$\left(\MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{0}{2}\right)$
- & -1.5055728821233 & \multirow{2}{*}{3.0583822882991} 
- & -4.2169093557827 & \multirow{2}{*}{17.7740636794077} \\
- & 2Re$
- \left(\left[
- \MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{QCD}
- +
- \MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{EWK}
- \right]
- \MKet{0}{2}{0}\right)$
- & 4.5639551704224 && 21.9909730351904 &\\\hline
- \multirow{2}{*}{$\alpha_s\alpha_e^2$}                                                  
- & 2Re$
- \left(\left[
- \MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{QCD}
- +
- \MBra{0}{2}{0}\frac{1}{2}\textbf{G}_{EWK}
- \right]
- \MKet{0}{0}{2}\right)$
- & 21.6853196393154 & \multirow{2}{*}{21.1834620119409} 
- & 94.6803519429044 & \multirow{2}{*}{92.5133587992241} \\
- & 2Re$\left(\MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{2}{0}\right)$
- & -0.5018576273744 && -2.1669931436803 &\\\hline
- $\alpha_e^3$                                                                             
- & 2Re$\left(\MBra{0}{0}{2}\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{0}{2}\right)$
- & \multicolumn{2}{c|}{7.3957257555633} 
- & \multicolumn{2}{c|}{31.9343298391050} \\\hline
-   \multicolumn{2}{|c|}{\textbf{Total}}     
- & \multicolumn{2}{c|}{\textbf{49.8461542134403}} 
- & \multicolumn{2}{c|}{\textbf{163.3483225457380}}\\\hline
- \end{tabular}
- \caption{Real IR Poles for $u\bar u\rightarrow u\bar u$, using dipole subtraction with 1-loop amplitudes
- disentangled.}
- \label{1loop_disentangled}
-\end{table}
-\restoregeometry
-
-\subsection{1-loop Matrix element disentanglement}
-The cancellation of the IR divergences must be fullfilled at fixed order on square amplitudes,
-where the real and virtual matrix elemants can be combined, as shown on the rows of tasbles \ref{virt_uubar}
-and \ref{real_uubar}. Alternatively one might attempt to check for the IR pole cancellation 
-for a particular interference term on the virtual NLO cross section, this is also possible and 
-we will discuss how we do it inside \NLOX. In general the IR behaviour of any given 1-loop amplitude 
-is given by the sum of endpoint contributions:
-
-\begin{equation}
- \MKet{1}{X}{Y} \rightarrow -\frac{1}{2}
- \left(
- \textbf{G}_{QCD}\MKet{0}{X-2}{Y} 
- + 
- \textbf{G}_{EWK}\MKet{0}{X}{Y-2}
- \right),
- \label{Theo}
-\end{equation}
-meaning that the squared amplitude built by using the sum on the RHS yields the opposite IR poles as the 
-one built using the LHS as shown in tables \ref{virt_uubar} \ref{1loop_disentangled}. 
-We just need to change variables on the endpoint contribution convolution:
-
-\begin{equation}
- \int d\sigma^E_{NLO} = \int d\Phi_{n}
- \sum_{a,b} g^{a} e^{b} 
- \sum_{i,j}
- \text{Re}\left(
- \MBra{0}{i}{j}
- \left[
- \textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
- +
- \textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
- \right]
- \right)
-\end{equation}
-where we are now summing two extra zeroes at the upper limits of both inner sums to cast it in the same 
-way as the 1-loop amplitude. Witout loss of generality we take the real part of each term, 
-because if the amplitudes in a term are different then there will be another term in the sum with the roles of the amplitudes reversed and thus the value of such term is the complex conjugate of the value of the term in question, thus the imaginary parts cancel. 
-If both amplitudes in a term are the same there is only one contribution of this 
-kind, but since the gauge group is $SU(3)$ and the operators $\textbf{G}$ are built from its 
-generators then it follows that the $\textbf{G}$ operators have real eigenvalues.\\
-
-Using eq.~\eqref{cancellation} we conclude that:
-
-\begin{equation}
- \sum_{ij}2\text{Re}
- \left(
- \MBra{0}{i}{j}
- \left[
- \MKet{1}{a-i}{b-j}
- +
- \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a-2-i}{b-j}
- +
- \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a-i}{b-2-j}
- \right]
- \right)=0 \hskip0.3cm \forall a,b
-\end{equation}
-to arrive to the conclusion in eq.\eqref{Theo} one must just note that this is true for the extreme cases 
-where either $a$ or $b$ have their minimum value, let's call $a_0$ and $b_0$ the minimum values of $a$ and $b$
-respectively, then the previous sum reduces to:
-
-\begin{equation}
- \MBra{0}{i}{j}
- \left[
- \MKet{1}{a_0-i}{b-j}
- +
- \cancelto{0}{\frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_0-2-i}{b-j}}
- +
- \frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_0-i}{b-2-j}
- \right]=0
-\end{equation}
-
-\begin{equation}
- \MBra{0}{i}{j}
- \left[
- \MKet{1}{a-i}{b_0-j}
- +
- \frac{1}{2}\textbf{G}_{QCD}\MKet{0}{a_0-2-i}{b_0-j}
- +
- \cancelto{0}{\frac{1}{2}\textbf{G}_{EWK}\MKet{0}{a_0-i}{b_0-2-j}}
- \right]=0
-\end{equation}
-and we can prove using induction that this is true for all other orders, since the consecutive terms (in the sense of increasing value of $a$ or $b$) only contain one extra 1-loop amplitude that we need to solve for.
-
-
-% \begin{equation}
-%  \MKet{1}{X_0+2}{Y_0} \rightarrow -\frac{1}{2}
-%  \left(
-%  \textbf{G}_{QCD}\MKet{0}{X_0}{Y_0} 
-%  + 
-%  \textbf{G}_{EWK}\cancelto{0}{\MKet{0}{X_0+2}{Y_0-2}}
-%  \right),
-%  \label{boundary}
-% \end{equation}
-% since the second term vanishes, this statement is identical to \eqref{cancellation} when evaluated at the maximum power of $g$. Now we proceed to prove \eqref{Theo} by induction, we assume that for every $n<m-1$ the statement:
-% \begin{equation}
-%   \MKet{1}{X_0-2(n-1)}{Y_0+2n}\rightarrow -\frac{1}{2}
-%   \left(
-%   \textbf{G}_{QCD}\MKet{0}{X_0-2n}{Y_0+2n} 
-%  + 
-%  \textbf{G}_{EWK}\MKet{0}{X_0-2(n-1)}{Y_0+2(n-1)}
-%  \right)
-% \end{equation}
-% holds and use \eqref{cancellation} to prove that it must hold for $n=m$. Using \eqref{cancellation} at fixed 
-% order of $g^{2X_0+2(m-1)}e^{2Y_0+2m}$ we have:
+% \subsection{Expression Classification using Graphs}
+% We now proceed to describe the classification procedure and how it is currently implemented in \texttt{NLOX}.
+% Graphs with only two nodes are evaluated down to a number trivially by the rules given in \eqref{}, so to start
+% we consider expressions with $4$ $f$ tensors, as we described before there is only one such strcture upon cannonical ordering, which is the tetrahedral graph:
 % 
-% \begin{equation}
-%  \Int{\Phi_n} \sum_{i,j}2\text{Re}\left[\right]\MKet{0}{2X_0-2(m-1)-i}{2Y_0+2m-j}
-% \end{equation}
+% 
+% \begin{center}
+% \begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
+%                     semithick]
+%   \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
+%   \tikzstyle{equation} = [
+%     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+%   \node[state] (1)                   {};
+%   \node[state] (2) [above of=1]      {};
+%   \node[state] (3) [below left  of=1]      {};
+%   \node[state] (4) [below right of=1]      {};
+%   \node[] (Separator) [above right of=4]      {};
+%   \node[equation] (Value) [right of=Separator] {\begin{minipage}[ht!]{0.2\textwidth}
+%                                                ×\begin{equation*}
+%                                                    \hskip0.5cm =\hskip0.5cm  \frac{N_c^2(N_c^2-1)}{2}
+%                                                 \end{equation*}
+%                                               \end{minipage}};
+%   \draw[red]
+%   (1) edge node{} (2)
+%   (1) edge node{} (3)
+%   (1) edge node{} (4)
+%   (2) edge [bend right]node{} (3)
+%   (3) edge [bend right]node{} (4)
+%   (4) edge [bend right]node{} (2);
+%   \end{tikzpicture}
+% \end{center}
+% 
+% for exprssions with $6$ \FNodes there are only $2$ possible graphs that are not trivially reduced to the tetrahedral graph, $K_{3,3}$ and the triangular prism graph shown above:
+% 
+% \begin{center}
+% \begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
+%                     semithick]
+%   \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
+%   \tikzstyle{equation} = [
+%     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+%   
+% 
+%   \node[state] (1)                   {};
+%   \node[state] (2) [below left of=1]      {};
+%   \node[state] (3) [above left of=1]      {};
+%   \node[state] (4) [right of=1]      {};
+%   \node[state] (5) [above right of=4]      {};
+%   \node[state] (6) [below right of=4]      {};
+%   \draw[red] 
+%         (1) edge   []         node {} (2)
+%         (2) edge   []         node {} (3)
+%         (3) edge   []         node {} (1)
+%         (1) edge   []         node {} (4)
+%         (2) edge   []         node {} (6)
+%         (3) edge   []         node {} (5)
+%         (4) edge   []         node {} (5)
+%         (5) edge   []         node {} (6)
+%         (6) edge   []         node {} (4);
+% 
+%   \node[] (Separator) [above right of=6]      {};
+%   \node[equation] (Value) [right of=Separator] {\begin{minipage}{0.2\textwidth}
+%                                                ×\begin{equation*}
+%                                                    \hskip0.5cm =\hskip0.5cm \frac{N_c^3(N_c^2-1)}{4}
+%                                                 \end{equation*}
+%                                               \end{minipage}};
+% \end{tikzpicture}  
+% \end{center}
+% 
+% \begin{center}
+% \begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
+%                     semithick]
+%   \tikzstyle{every state}=[fill=red,draw=red,minimum size=5mm]
+%   \tikzstyle{equation} = [
+%     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+%   
+% 
+%   \node[state] (1){};
+%   
+%   \node[] (2B) [below of=1]      {};
+%   \node[state] (2) [below of=2B]      {};
+%   
+%   \node[state] (3) [right of=2]      {};
+%   \node[] (3B) [above of=3]      {};
+%   
+%   \node[state] (4) [right of=3]      {};
+%   \node[] (4B) [above of=4]      {};
+%   
+%   \node[state] (5) [right of=1]      {};
+%   \node[state] (6) [right of=5]      {};
+%   
+%   \draw[red] 
+%         (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (2)
+%         (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (3)
+%         (1) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (4)
+%         (2) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
+%         (2) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6)
+%         (3) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
+%         (3) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6)
+%         (4) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (5)
+%         (4) edge   [draw=white,double=red,double distance = \pgflinewidth,ultra thick]   node {} (6);
+%   \node[] (Separator) [right of=4B]      {};
+%   \node[equation] (Value) [right of=Separator] {\begin{minipage}{0.2\textwidth}
+%                                                ×\begin{equation*}
+%                                                    \hskip0.5cm =\hskip0.5cm 0
+%                                                 \end{equation*}
+%                                               \end{minipage}};
+% \end{tikzpicture}  
+% \end{center}
+% 
+% while for $8$ \FNodes we 3 planar structures:
+% \begin{center}
+% \begin{tikzpicture}[>=stealth',shorten >=0.5pt,auto,node distance=1.5cm,
+%                     semithick]
+%   \tikzstyle{every state}=[fill=red,draw=red,minimum size=3mm]
+%   \tikzstyle{equation} = [
+%     rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+%   
+%   \node[]      (20) at (0,0) [] {};
+%   \node[state] (21) at ( 0.6, 0.6) [] {};
+%   \node[state] (22) at (-0.6, 0.6) [] {};
+%   \node[state] (23) at (-0.6,-0.6) [] {};
+%   \node[state] (24) at ( 0.6,-0.6) [] {};
+%   \node[state] (25) at ( 1.2, 1.2) [] {};
+%   \node[state] (26) at (-1.2, 1.2) [] {}; 
+%   \node[state] (27) at (-1.2,-1.2) [] {};
+%   \node[state] (28) at ( 1.2,-1.2) [] {};
+%   
+%   \draw[red] 
+%         (21) edge  node {} (22)
+%         (22) edge  node {} (23)
+%         (23) edge  node {} (24)
+%         (24) edge  node {} (21)
+%         (25) edge  node {} (26)
+%         (26) edge  node {} (27)
+%         (27) edge  node {} (28)
+%         (28) edge  node {} (25)
+%         (21) edge  node {} (25)
+%         (22) edge  node {} (26)
+%         (23) edge  node {} (27)
+%         (24) edge  node {} (28);
+%   
+%   \tikzset{shift={(3.5,0)}}
+%   
+%   \node[] at (0,0) [] {};
+%   \node[state] (1) at (1,0) [] {};
+%   \node[state] (2) at (0.3090,0.9510) [] {};
+%   \node[state] (3) at (-0.809017, 0.587785) [] {};
+%   \node[state] (4) at (-0.809017, -0.587785) [] {};
+%   \node[state] (5) at (0.3090,-0.9510) [] {};
+%   \node[state] (6) at (2,0) {};
+%   \node[state] (7) [above right of=3] {};
+%   \node[state] (8) [below right of=4] {};
+%   
+%   \draw[red] 
+%         (1) edge  node {} (2)
+%         (2) edge  node {} (3)
+%         (3) edge  node {} (4)
+%         (4) edge  node {} (5)
+%         (5) edge  node {} (1)
+%         (1) edge  node {} (6)
+%         (2) edge  node {} (7)
+%         (5) edge  node {} (8)
+%         (6) edge  node {} (7)
+%         (6) edge  node {} (8)
+%         (7) edge  node {} (3)
+%         (8) edge  node {} (4);
+%   
+%   
+%   \tikzset{shift={(5.5,0)}}
+%   \node[]      (10) at (0,0) [] {};
+%   \node[state] (11) at (1,0) [] {};
+%   \node[state] (12) at (0.5,0.866025) [] {};
+%   \node[state] (13) at (-0.5,0.866025) [] {};
+%   \node[state] (14) at (-1,0) [] {};
+%   \node[state] (15) at (-0.5,-0.866025)  [] {};
+%   \node[state] (16) at (0.5,-0.866025) [] {};
+%   \node[state] (17) at (2,0) {};
+%   \node[state] (18) at (-2,0) {};
+%   
+%   \draw[red] 
+%         (11) edge  node {} (12)
+%         (12) edge  node {} (13)
+%         (13) edge  node {} (14)
+%         (14) edge  node {} (15)
+%         (15) edge  node {} (16)
+%         (16) edge  node {} (11)
+%         (17) edge  node {} (11)
+%         (17) edge  node {} (16)
+%         (17) edge  node {} (12)
+%         (18) edge  node {} (14)
+%         (18) edge  node {} (15)
+%         (18) edge  node {} (13);
+%   
+%   
+%   \end{tikzpicture}  
+% \end{center}
 
 
 
-\newpage
-\section{Spin-Correlated Amplitudes}
-Spin correlated amplitudes are necessary for building the subtraction function they arise because 
-we need to consider external off-shell photons and gluons in order to correctly capture the 
-radiative matrix element's behaviour. The dipole functions are:
-
-\begin{equation}
- P_{q\rightarrow gg} = 
-\end{equation}
 
 
 
