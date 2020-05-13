@@ -186,116 +186,12 @@ FVector<T> FVector<T>::operator-(){
   return neg;
 }
 
-// 
-// int look_for(int b,int *a){
-//     int pos;
-//     int cont = 0;
-//     int i;
-//     for(i=0; i<4; i++)
-//         {
-//         if (b == a[i])
-//             {
-//             cont ++;
-//             pos = i;                
-//             }           
-//         }
-//     if (cont == 1) return pos;
-//     else return -1;
-//     
-//     
-// }
-// 
-// int sig(int *a){
-//     int signo = 1;
-//     int i;
-//     int vec[4];
-//     for (i=0; i<4; i++) vec[i] = a[i];
-//     for (i=0; i<4; i++)
-//         {
-//         if(vec[i] == i);
-//         else 
-//             {
-//             int pos = look_for(i,vec); 
-//             if( pos == -1 ) 
-//                 {
-//                 signo = 0;
-//                 }
-//              else 
-//                 {
-//                 vec[pos] = vec[i];
-//                 vec[i] = i;
-//                 signo = (-1)*signo;
-//                 }
-//              }
-//           }
-//     return signo;
-//     
-// }
-// 
-// int signo(int i,int j, int k, int l){
-//     int a[4];
-//     a[0] = i;
-//     a[1] = j;
-//     a[2] = k;
-//     a[3] = l;
-//     return sig(a);
-// }
-// 
-// double epsilon(FVector a, FVector b, FVector c, FVector d){
-//     double det = 0;
-//     double M[4][4];
-//     M[0][0] = a.get_t();
-//     M[0][1] = a.get_x();
-//     M[0][2] = a.get_y();
-//     M[0][3] = a.get_z();
-//     
-//     M[1][0] = b.get_t();
-//     M[1][1] = b.get_x();
-//     M[1][2] = b.get_y();
-//     M[1][3] = b.get_z();
-//     
-//     M[2][0] = c.get_t();
-//     M[2][1] = c.get_x();
-//     M[2][2] = c.get_y();
-//     M[2][3] = c.get_z();
-//     
-//     M[3][0] = d.get_t();
-//     M[3][1] = d.get_x();
-//     M[3][2] = d.get_y();
-//     M[3][3] = d.get_z();
-//     
-//     int i,j,k,l;
-//     for (i=0; i<4; i++)
-//         {
-//         for(j=0; j<4; j++)
-//             {
-//             for(k=0; k<4; k++)
-//                 {
-//                 for(l=0; l<4; l++)
-//                     {
-//                     det = det + (signo(i,j,k,l)*M[0][i]*M[1][j]*M[2][k]*M[3][l]);                       
-//                     }
-//                     
-//                 }
-//                 
-//                 
-//             }
-//             
-//             
-//         }
-//     return det;
-// }
-// 
 
 template <class T>
 class Matrix{
     
-    /// Printing Function ///
-//     friend std::ostream &operator<<(std::ostream &, const Matrix<T>&);
-    
     public:
        /// Components ///
-//        double M[4][4];
        T M[4][4];
     
        /// Constructors ///
@@ -509,46 +405,6 @@ Matrix<T> operator / (Matrix<T> m, U c){
     }
    return out; 
 }
-
-// 
-// double Tr(CMatrix c){
-//     double trace=0;
-//     int i;
-//     for(i=0; i<4; i++)
-//     {
-//     trace = trace + c.M[i][i];
-//               
-//     }  
-//     return trace;
-//     
-//     
-// }
-// 
-// double Det(CMatrix c){
-//     double det=0;
-//     int i,j,k,l;
-//     for (i=0; i<4; i++)
-//         {
-//         for(j=0; j<4; j++)
-//             {
-//             for(k=0; k<4; k++)
-//                 {
-//                 for(l=0; l<4; l++)
-//                     {
-//                     double sig = signo(i,j,k,l);
-//                     det = det + (sig*c.M[0][i]*c.M[1][j]*c.M[2][k]*c.M[3][l]);                       
-//                     }
-//                     
-//                 }
-//                 
-//                 
-//             }
-//             
-//             
-//         }
-//     return det;
-//     
-// }
 
 
 #endif

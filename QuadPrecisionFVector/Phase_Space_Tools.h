@@ -7,7 +7,6 @@
 
 #define ZERO_SPEED 1E-38
 
-
 const __float128 PSSR_PI = strtoflt128 ("3.14159265358979323846264338327950288420", NULL);
 
 template <class T>
@@ -26,8 +25,6 @@ __float128 sin(__float128 x){
 __float128 cos(__float128 x){
     return cosq(x);
 }
-
-
 
 template <class T>
 Matrix<T> Boost(T v_x, T v_y, T v_z){
@@ -326,7 +323,5 @@ void Repair_PSP(FVector<T>* PIn, T* MIn, int NPar, FVector<T>* POut, T* MOut){
 
     
 }
-
-
 
 #endif
